@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VisitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::view('/Index', 'Index');
 //Info page 
 Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
+
+Route::get('/Visit/{link}', [VisitController::class, 'Index']);
