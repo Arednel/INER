@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\News;
-use App\Models\NewsData;
-
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+
+use App\Models\News;
+use App\Models\NewsData;
 use App\Models\TrixRichTexts;
-use Illuminate\Support\Facades\URL;
 
 class NewsController extends Controller
 {

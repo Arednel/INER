@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.0.3 / 2023.07.08</p>
-    <p>Laravel Trix</p>
+    <p>version 0.0.3.1 / 2023.07.08</p>
+    <p>QoL</p>
 </body>
 
 </html>
