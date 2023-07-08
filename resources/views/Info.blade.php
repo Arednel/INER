@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.0.1.1 / 2023.07.06</p>
-    <p>Request ip</p>
+    <p>version 0.0.2 / 2023.07.08</p>
+    <p>Save text part</p>
 </body>
 
 </html>
