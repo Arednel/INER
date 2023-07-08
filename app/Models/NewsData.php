@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsPart extends Model
+class NewsData extends Model
 {
+    protected $table = 'news_data';
+
     protected $fillable = [
-        'news_id',
-        'number',
-        'type',
-        'data',
+        'id',
+        'title',
     ];
 }

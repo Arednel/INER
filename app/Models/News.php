@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 
 class News extends Model
 {
-    protected $table = 'news';
+    use HasTrixRichText;
 
-    protected $attributes = [
-        'title' => 'title yap',
-    ];
+    protected $guarded = [];
 }

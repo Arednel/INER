@@ -7,13 +7,25 @@
 
     <title>Создать новость</title>
 
-    @livewireStyles
+    @trixassets
 </head>
 
 <body>
-    @livewire('news.create-form')
+    <br>
+    <a href="/">← На главную</a>
 
-    @livewireScripts
+    <br><br><br>
+    <form method="POST" action="/news">
+        @csrf
+
+        <label for="">Заголовок</label>
+        <input type="text" name="title" required>
+        <br><br>
+
+        @trix(\App\News::class, 'content')
+
+        <input type="submit">
+    </form>
 </body>
 
 </html>

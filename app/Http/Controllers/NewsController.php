@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
 use App\Models\News;
+use App\Models\NewsData;
+
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\TrixRichTexts;
+use Illuminate\Support\Facades\URL;
 
 class NewsController extends Controller
 {
@@ -14,7 +17,16 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $news_all = News::all();
+        foreach ($news_all as $news) {
+            $news->content = TrixRichTexts::where('model_id', $news->id)
+                ->first()
+                ->content;
+
+            $news->title = NewsData::find($news->id)
+                ->title;
+        }
+        return view('news.index', ['news_all' => $news_all]);
     }
 
     /**
@@ -30,7 +42,42 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $content = request()->all()['news-trixFields']['content'];
+
+        $has_youtube_link = Str::contains(
+            $content,
+            'iframe'
+        );
+
+        if ($has_youtube_link) {
+            $content = Str::replace(
+                '&lt;',
+                '<',
+                $content
+            );
+
+            $content = Str::replace(
+                '&gt;',
+                '>',
+                $content
+            );
+            //To overwrite reequest data
+            $data['news-trixFields']['content'] = $content;
+            $request->merge($data);
+        }
+
+        $news = News::create([
+            'news-trixFields' => $request['news-trixFields'],
+            'attachment-news-trixFields' => $request['attachment-news-trixFields'],
+        ]);
+
+        //To save other data (like title)
+        NewsData::create([
+            'id' => $news->id,
+            'title' => $request['title'],
+        ]);
+
+        return redirect('/');
     }
 
     /**
@@ -63,5 +110,10 @@ class NewsController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function image($image)
+    {
+        dd('g');
     }
 }

@@ -14,6 +14,10 @@
     </p>
 
     <p>
+        <button target="_blank" onclick="location.href='/news'">Все новости</button>
+    </p>
+
+    <p>
         <button target="_blank" onclick="location.href='/news/create'">Создать новость</button>
     </p>
 </body>
