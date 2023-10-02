@@ -14,11 +14,11 @@
     </p>
 
     <p>
-        <button target="_blank" onclick="location.href='/news'">Все новости</button>
+        <button target="_blank" onclick="location.href='/news'">Все темы</button>
     </p>
 
     <p>
-        <button target="_blank" onclick="location.href='/news/create'">Создать новость</button>
+        <button target="_blank" onclick="location.href='/news/create'">Создать тему</button>
     </p>
 </body>
 
