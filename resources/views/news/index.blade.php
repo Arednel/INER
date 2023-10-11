@@ -27,6 +27,14 @@
             <br><br>
 
             {!! $news->content !!}
+
+            <br><br>
+            <form method="GET" action="/news/{{ $news->id }}/edit">
+
+                @csrf
+
+                <input type="submit" value="Редактировать">
+            </form>
         </div>
     @endforeach
 </body>

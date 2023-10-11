@@ -84,7 +84,7 @@ class NewsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        dd('show');
     }
 
     /**
@@ -92,7 +92,18 @@ class NewsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $news_one = News::all()->where('id', $id);
+
+        //To show later
+        foreach ($news_one as $news) {
+            $news->content = TrixRichTexts::where('model_id', $news->id)
+                ->first()
+                ->content;
+
+            $news->title = NewsData::find($news->id)
+                ->title;
+        }
+        return view('news.edit', ['news' => $news]);
     }
 
     /**
@@ -100,7 +111,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd('update');
     }
 
     /**
@@ -108,11 +119,11 @@ class NewsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd('destroy');
     }
 
     public function image($image)
     {
-        dd('g');
+        dd('image');
     }
 }

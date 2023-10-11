@@ -5,7 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Создать новость</title>
+    <title>Редактирование темы</title>
 
     @trixassets
 </head>
@@ -15,15 +15,17 @@
     <a href="/">← На главную</a>
 
     <br><br><br>
-    <form method="POST" action="/news">
+    <form method="POST" action="/news/{{ $news->id }}">
 
         @csrf
 
+        <input type="hidden" name="_method" value="put" />
+
         <label for="">Заголовок</label>
-        <input type="text" name="title" required>
+        <input type="text" name="title" value="{{ $news->title }}"required>
         <br><br>
 
-        @trix(\App\News::class, 'content')
+        {!! $news->trix('content') !!}
 
         <input type="submit">
     </form>
