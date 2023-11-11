@@ -35,6 +35,15 @@
 
                 <input type="submit" value="Редактировать">
             </form>
+            <br><br>
+            <form method="POST" action="/news/{{ $news->id }}">
+
+                @method('DELETE')
+
+                @csrf
+
+                <input type="submit" value="Удалить">
+            </form>
         </div>
     @endforeach
 </body>

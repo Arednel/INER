@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.0.5 / 2023.10.11</p>
-    <p>Started edit page</p>
+    <p>version 0.1.0 / 2023.11.11</p>
+    <p>Deleting trix news</p>
 </body>
 
 </html>

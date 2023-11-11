@@ -43,11 +43,11 @@ class NewsController extends Controller
     {
         $content = request()->all()['news-trixFields']['content'];
 
+        //For youtube iframe / youtube embed
         $has_youtube_link = Str::contains(
             $content,
             'iframe'
         );
-
         if ($has_youtube_link) {
             $content = Str::replace(
                 '&lt;',
@@ -109,9 +109,49 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $news_id)
     {
-        dd('update');
+        // $content = request()->all()['news-trixFields']['content'];
+
+        // //For youtube iframe / youtube embed
+        // $has_youtube_link = Str::contains(
+        //     $content,
+        //     'iframe'
+        // );
+        // if ($has_youtube_link) {
+        //     $content = Str::replace(
+        //         '&lt;',
+        //         '<',
+        //         $content
+        //     );
+
+        //     $content = Str::replace(
+        //         '&gt;',
+        //         '>',
+        //         $content
+        //     );
+        //     //To overwrite reequest data
+        //     $data['news-trixFields']['content'] = $content;
+        //     $request->merge($data);
+        // }
+
+        // News::where('id', $news_id)
+        //     ->update([]);
+
+        // TrixRichTexts::where('id', $news_id)
+        //     ->update([
+        //         'content' => $request['news-trixFields'],
+        //     ]);
+
+        // //Add update for each image
+
+        // //To save other data (like title)
+        // NewsData::where('id', $news_id)
+        //     ->update([
+        //         'title' => $request['title'],
+        //     ]);
+
+        // return redirect('/news');
     }
 
     /**
@@ -119,7 +159,9 @@ class NewsController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('destroy');
+        News::destroy($id);
+
+        return redirect('/news');
     }
 
     public function image($image)

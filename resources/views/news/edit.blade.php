@@ -22,7 +22,7 @@
         <input type="hidden" name="_method" value="put" />
 
         <label for="">Заголовок</label>
-        <input type="text" name="title" value="{{ $news->title }}"required>
+        <input type="text" name="title" value="{{ $news->title }}" required>
         <br><br>
 
         {!! $news->trix('content') !!}
