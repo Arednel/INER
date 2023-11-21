@@ -51,16 +51,27 @@
                                 <div id="top-menu">
                                     <div class="collapse navbar-collapse main_menu" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
-                                            <li><a class="show-1 templatemo_home" href="#"><span
-                                                        class="fa fa-home"></span>Домой</a></li>
-                                            <li><a class="show-1 templatemo_page2" href="#"><span
-                                                        class="fa fa-picture-o"></span>Галлерея</a></li>
                                             <li>
-                                                <a class="show-1 templatemo_page3" href="#"><span
-                                                        class="fa fa-users"></span>Войти</a>
+                                                <a class="show-1 templatemo_home" href="#">
+                                                    <span class="fa fa-home"></span>Главная</a>
                                             </li>
-                                            <li><a class="show-1 templatemo_page4" href="#"><span
-                                                        class="fa fa-envelope"></span>О нас</a></li>
+                                            @if ($is_logged)
+                                                <li>
+                                                    <a class="show-1 templatemo_page2" href="#">
+                                                        <span class="fa fa-picture-o"></span>Темы</a>
+                                                </li>
+                                                <li>
+                                                    <a href="logout">
+                                                        <span class="fa fa-users"> </span>Выйти
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a class="show-1 templatemo_page3" href="#">
+                                                        <span class="fa fa-users"></span>Войти</a>
+                                                </li>
+                                            @endif
+
                                         </ul>
                                     </div>
                                 </div>
@@ -73,6 +84,7 @@
             </div>
         </div>
     </div>
+
     <!-- menu end -->
     <div id="menu-container">
         <div class="content homepage" id="menu-1">
@@ -197,293 +209,57 @@
                 <!-- home end -->
             </div>
         </div>
-        <!-- gallery start -->
+
+        <!-- themes start -->
         <div class="content gallery" id="menu-2">
-            <div class="container">
-                <div class="row gradient templatemo_gallery_wrapper">
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/1.jpg" alt="gallery 1">
-                                <div class="overlay">
-                                    <a href="images/gallery/1.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/2.jpg" alt="gallery 2">
-                                <div class="overlay">
-                                    <a href="images/gallery/2.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/3.jpg" alt="gallery 3">
-                                <div class="overlay">
-                                    <a href="images/gallery/3.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/4.jpg" alt="gallery 4">
-                                <div class="overlay">
-                                    <a href="images/gallery/4.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/5.jpg" alt="gallery 5">
-                                <div class="overlay">
-                                    <a href="images/gallery/5.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/6.jpg" alt="gallery 6">
-                                <div class="overlay">
-                                    <a href="images/gallery/6.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/7.jpg" alt="gallery 7">
-                                <div class="overlay">
-                                    <a href="images/gallery/7.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/8.jpg" alt="gallery 8">
-                                <div class="overlay">
-                                    <a href="images/gallery/8.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="templatemo_gallery">
-                            <div class="gallery-item">
-                                <img src="images/gallery/9.jpg" alt="gallery 9">
-                                <div class="overlay">
-                                    <a href="images/gallery/9.jpg" data-rel="lightbox" class="fa fa-search"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <div class="templatemo_viewmore blue">VIEW MORE</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- gallery end -->
-        <!-- about start -->
-        <div class="clear"></div>
-        <div class="content about" id="menu-3">
-            <div class="container">
-                <div class="row templatemo_about_wrapper">
-                    <div class="col-md-12 gradient">
-                        <div class="templatemo_about">
-                            <div class="templatemo_about_title">Добро пожаловать!</div>
-                            <div class="templatemo_about_subtitle">Пожалуйста, войдите в свою учетную запись</div>
-
-                            <form method="POST" action="/Login" class="form">
-
-                                @csrf
-
-                                <div class="form-item">
-                                    <label class="form-item__title">Логин</label>
-                                    <div class="form-item__input">
-                                        <input type="Логин" placeholder="Введите логин" value="{{ old('login') }}"
-                                            name="login" autocomplete="login" required>
-                                        <span class="focus-input-1"></span>
-                                        <span class="focus-input-2"></span>
-                                    </div>
-                                    @error('login')
-                                        <div class="form-item__error show">
-                                            <p>{{ $message }}</p>
-                                        </div>
-                                    @else
-                                        <div class="form-item__error"></div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-item">
-                                    <label class="form-item__title">Пароль</label>
-                                    <div class="form-item__input">
-                                        <input type="password" placeholder="Введите пароль" name="password"
-                                            autocomplete="current-password" required>
-                                        <span class="focus-input-1"></span>
-                                        <span class="focus-input-2"></span>
-                                    </div>
-                                    <div class="form-item__error" id='password_error'>
-                                        <p></p>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
+            <div class="row gradient templatemo_contact_wrapper">
+                <div class="col-md-12">
+                    <div class="templatemo_contact_map">
+                        <div id="templatemo_map"></div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 templatemo_who">
-                        <div class="templatemo_about_title">WHO WE ARE?</div>
-                        <div class="templatemo_about_text">
-                            <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum
-                                velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Duis sed odio nec tellus a
-                                odio tincidunt asit amet.</p>
-                            <div class="templatemo_about_text_image">
-                                <img src="images/templatemo_team01.jpg" alt="templatemo team 1">
-                                <div class="clear"></div>
-                                <div class="name">TRACY</div>
-                                <div class="post">Web Designer</div>
-                            </div>
-                            <div class="templatemo_about_text_image">
-                                <img src="images/templatemo_team02.jpg" alt="templatemo team 2">
-                                <div class="clear"></div>
-                                <div class="name">JULIA</div>
-                                <div class="post">JS Developer</div>
-                            </div>
-                            <div class="templatemo_about_text_image">
-                                <img src="images/templatemo_team03.jpg" alt="templatemo team 3">
-                                <div class="clear"></div>
-                                <div class="name">LINDA</div>
-                                <div class="post">Manager</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                    <div class="templatemo_contact_title">CONTACT US</div>
+                    <div class="templatemo_contact_subtitle">CRAS INTERDUM ACCUMSAN DIAM</div>
                 </div>
-                <div class="row gradient">
-                    <div class="col-md-4">
-                        <div class="templatemo_bot_box">
-                            <div class="title">ENENAN SOCITUE</div>
-                            <div class="subtitle">SIT AMET NIBH VULPUTATE CURSUS</div>
-                            <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
-                                sem nibh id elit. Duis sed odio sit amet.</p>
-                            <p>Morbi accumsan ipsum velit. Duis sed odio sit amet nibh vulputate cursus a sit amet
-                                mauris.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="templatemo_bot_box">
-                            <div class="title">TELLUSA ODIO ASIT</div>
-                            <div class="subtitle">MORBI ACCUMASN IPSUM VALIT</div>
-                            <ul>
-                                <li>Aenean sollicitudin</li>
-                                <li>Lorem quis bibendum auctor</li>
-                                <li>Risi elit consequat ipsum</li>
-                                <li>Dnec sagittis sem nibhid</li>
-                                <li>Duis sed odio sit amet</li>
-                                <li>Morbi accumsan consequat</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="templatemo_bot_box">
-                            <div class="title">SAGITTIS SEM NIB</div>
-                            <div class="subtitle">DUIS SED ODIO SIT AMET NIBH</div>
-                            <ul>
-                                <li>Aenean sollicitudin</li>
-                                <li>Lorem quis bibendum auctor</li>
-                                <li>Risi elit consequat ipsum</li>
-                                <li>Dnec sagittis sem nibhid</li>
-                                <li>Duis sed odio sit amet</li>
-                                <li>Morbi accumsan consequat</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- about end -->
-        <!-- contact start -->
-        <div class="content contact" id="menu-5">
-            <div id="menu-4" class="container">
-                <div class="row gradient templatemo_contact_wrapper">
-                    <div class="col-md-12">
-                        <div class="templatemo_contact_map">
-                            <div id="templatemo_map"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="templatemo_contact_title">CONTACT US</div>
-                        <div class="templatemo_contact_subtitle">CRAS INTERDUM ACCUMSAN DIAM</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="templatemo_form">
-                            <form action="#" method="post" id="templatemo-contact">
-                                <input type="text" name="name" id="nametext" class="name"
-                                    placeholder="NAME">
-                                <input type="text" name="email" id="emailtext" class="email"
-                                    placeholder="EMAIL">
-                                <textarea name="message" class="message" placeholder="MESSAGE ... " id="message"></textarea>
-                                <button type="submit" class="blue">SEND</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="templatemo_form">
-                            <span class="bluetext">This is free website template from</span><span class="redtext">
-                                templatemo</span>. Ribendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
-                            elit. Duis sed odio sit amet. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh
-                            vulputate cursus a sit amet mauris.
-                            <ul>
-                                <li><span class="fa fa-map-marker"></span>2100, Aenean sollicitudin, Los Angeles, CA
-                                    100200</li>
-                                <li><span class="fa fa-phone"></span>010 020 0340, 090 080 0760</li>
-                                <li><span class="fa fa-envelope"></span><a href="#">contact@company.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- contact end -->
-    </div>
-
-    <!-- footer start -->
-    <div class="clear"></div>
-
-    <div class="container">
-        <div class="row">
-            <div class="templatemo_footer">
-
-                <div class="col-md-6">Copyright &copy; 2084 Company Name</div>
                 <div class="col-md-6">
-                    <div class="social"><a href="#"><img src="images/templatemo_fb.jpg" alt="facebook"></a>
-                    </div>
-                    <div class="social"><a href="#"><img src="images/templatemo_gg.jpg" alt="google plus"></a>
-                    </div>
-                    <div class="social"><a href="#"><img src="images/templatemo_tw.jpg" alt="twitter"></a>
+                    <div class="templatemo_form">
+                        <form action="#" method="post" id="templatemo-contact">
+                            <input type="text" name="name" id="nametext" class="name" placeholder="NAME">
+                            <input type="text" name="email" id="emailtext" class="email" placeholder="EMAIL">
+                            <textarea name="message" class="message" placeholder="MESSAGE ... " id="message"></textarea>
+                            <button type="submit" class="blue">SEND</button>
+                        </form>
                     </div>
                 </div>
-                <div class="clear"></div>
-
+                <div class="col-md-6">
+                    <div class="templatemo_form">
+                        <span class="bluetext">This is free website template from</span><span class="redtext">
+                            templatemo</span>. Ribendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+                        elit. Duis sed odio sit amet. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh
+                        vulputate cursus a sit amet mauris.
+                        <ul>
+                            <li><span class="fa fa-map-marker"></span>2100, Aenean sollicitudin, Los Angeles, CA
+                                100200</li>
+                            <li><span class="fa fa-phone"></span>010 020 0340, 090 080 0760</li>
+                            <li><span class="fa fa-envelope"></span><a href="#">contact@company.com</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- themes end -->
+
+        <!-- login / logout start -->
+        @if (!$is_logged)
+            @include('components.login')
+        @endif
+        <!-- login / logout end -->
+
+
     </div>
-    <!-- footer end -->
+
+    @include('components.footer')
 </body>
 
 </html>

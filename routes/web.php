@@ -19,7 +19,8 @@ use App\Http\Controllers\NewsController;
 Route::view('/', 'Index')->name('index');
 Route::view('/index', 'Index');
 Route::view('/Index', 'Index');
-Route::view('/Test', 'Test');
+
+Route::get('/Testing', [NewsController::class, 'Test']);
 
 //Info page 
 Route::view('/Info', 'Info');
