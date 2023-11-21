@@ -168,9 +168,4 @@ class NewsController extends Controller
     {
         dd('image');
     }
-
-    public function Test()
-    {
-        return view('Test', ['is_logged' => true]);
-    }
 }

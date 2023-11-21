@@ -55,7 +55,7 @@
                                                 <a class="show-1 templatemo_home" href="#">
                                                     <span class="fa fa-home"></span>Главная</a>
                                             </li>
-                                            @if ($is_logged)
+                                            @if (Auth::check())
                                                 <li>
                                                     <a class="show-1 templatemo_page2" href="#">
                                                         <span class="fa fa-picture-o"></span>Темы</a>
@@ -251,7 +251,7 @@
         <!-- themes end -->
 
         <!-- login / logout start -->
-        @if (!$is_logged)
+        @if (!Auth::check())
             @include('components.login')
         @endif
         <!-- login / logout end -->

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,18 @@ Route::view('/', 'Index')->name('index');
 Route::view('/index', 'Index');
 Route::view('/Index', 'Index');
 
-Route::get('/Testing', [NewsController::class, 'Test']);
+//Login
+Route::post('/Login', [LoginController::class, 'login']);
+
+//Logout
+Route::get('/Logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+//For testing purposes
+Route::view('/Test', 'Test');
 
 //Info page 
 Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
 
-Route::resource('news', NewsController::class);
+Route::resource('news', NewsController::class)->middleware('auth');
