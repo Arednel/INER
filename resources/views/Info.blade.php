@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.3.2 / 2023.11.28</p>
-    <p>Voyager added</p>
+    <p>version 0.4.0 / 2023.11.28</p>
+    <p>Fully changed trix to voyager</p>
 </body>
 
 </html>

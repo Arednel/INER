@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
-use App\Http\Controllers\NewsController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TopicController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -35,8 +36,7 @@ Route::view('/Test', 'Test');
 Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
 
-Route::resource('news', NewsController::class)->middleware('auth');
-
+Route::resource('topics', TopicController::class)->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
