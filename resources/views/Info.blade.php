@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.3.0 / 2023.11.21</p>
-    <p>Simple login</p>
+    <p>version 0.3.1 / 2023.11.28</p>
+    <p>Changed main page</p>
 </body>
 
 </html>
