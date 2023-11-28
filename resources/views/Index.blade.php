@@ -210,45 +210,107 @@
             </div>
         </div>
 
-        <!-- themes start -->
+        <!-- gallery start -->
         <div class="content gallery" id="menu-2">
-            <div class="row gradient templatemo_contact_wrapper">
-                <div class="col-md-12">
-                    <div class="templatemo_contact_map">
-                        <div id="templatemo_map"></div>
+            <div class="container">
+                <div class="row gradient templatemo_gallery_wrapper">
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/1.jpg" alt="gallery 1">
+                                <div class="overlay">
+                                    <a href="images/gallery/1.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="templatemo_contact_title">CONTACT US</div>
-                    <div class="templatemo_contact_subtitle">CRAS INTERDUM ACCUMSAN DIAM</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="templatemo_form">
-                        <form action="#" method="post" id="templatemo-contact">
-                            <input type="text" name="name" id="nametext" class="name" placeholder="NAME">
-                            <input type="text" name="email" id="emailtext" class="email" placeholder="EMAIL">
-                            <textarea name="message" class="message" placeholder="MESSAGE ... " id="message"></textarea>
-                            <button type="submit" class="blue">SEND</button>
-                        </form>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/2.jpg" alt="gallery 2">
+                                <div class="overlay">
+                                    <a href="images/gallery/2.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="templatemo_form">
-                        <span class="bluetext">This is free website template from</span><span class="redtext">
-                            templatemo</span>. Ribendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
-                        elit. Duis sed odio sit amet. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh
-                        vulputate cursus a sit amet mauris.
-                        <ul>
-                            <li><span class="fa fa-map-marker"></span>2100, Aenean sollicitudin, Los Angeles, CA
-                                100200</li>
-                            <li><span class="fa fa-phone"></span>010 020 0340, 090 080 0760</li>
-                            <li><span class="fa fa-envelope"></span><a href="#">contact@company.com</a></li>
-                        </ul>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/3.jpg" alt="gallery 3">
+                                <div class="overlay">
+                                    <a href="images/gallery/3.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/4.jpg" alt="gallery 4">
+                                <div class="overlay">
+                                    <a href="images/gallery/4.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/5.jpg" alt="gallery 5">
+                                <div class="overlay">
+                                    <a href="images/gallery/5.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/6.jpg" alt="gallery 6">
+                                <div class="overlay">
+                                    <a href="images/gallery/6.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/7.jpg" alt="gallery 7">
+                                <div class="overlay">
+                                    <a href="images/gallery/7.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/8.jpg" alt="gallery 8">
+                                <div class="overlay">
+                                    <a href="images/gallery/8.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="templatemo_gallery">
+                            <div class="gallery-item">
+                                <img src="images/gallery/9.jpg" alt="gallery 9">
+                                <div class="overlay">
+                                    <a href="images/gallery/9.jpg" data-rel="lightbox" class="fa fa-search"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="templatemo_viewmore blue">VIEW MORE</div>
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- themes end -->
+        <!-- gallery end -->
 
         <!-- login / logout start -->
         @if (!Auth::check())

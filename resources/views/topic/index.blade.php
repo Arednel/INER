@@ -18,9 +18,12 @@
 <body>
     <br>
     <a href="/">← На главную</a>
-
+    <br>
+    <hr>
     @foreach ($topics as $topic)
+        <h2>{{ $topic->title }}</h2>
         {!! $topic->body !!}
+        <hr>
     @endforeach
 </body>
 

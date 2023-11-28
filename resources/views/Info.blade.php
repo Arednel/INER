@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.0 / 2023.11.28</p>
-    <p>Fully changed trix to voyager</p>
+    <p>version 0.4.1 / 2023.11.28</p>
+    <p>Bread migration</p>
 </body>
 
 </html>
