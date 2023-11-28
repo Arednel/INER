@@ -36,3 +36,8 @@ Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
 
 Route::resource('news', NewsController::class)->middleware('auth');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
