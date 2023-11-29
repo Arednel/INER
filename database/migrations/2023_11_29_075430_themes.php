@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('themes', function (Blueprint $table) {
             $table->id();
             $table->text('title');
-            $table->text('body');
-            $table->integer('main_theme_id');
-            $table->integer('secondary_theme_id');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('topics');
+        Schema::dropIfExists('themes');
     }
 };

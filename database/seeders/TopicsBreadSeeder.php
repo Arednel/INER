@@ -15,8 +15,8 @@ class TopicsBreadSeeder extends Seeder
             // usually the name of the table
             'name'                  => 'topics',
             'slug'                  => 'topics',
-            'display_name_singular' => 'Topics',
-            'display_name_plural'   => 'Topics',
+            'display_name_singular' => 'Тема',
+            'display_name_plural'   => 'Темы',
             'icon'                  => 'voyager-categories',
             'model_name'            => 'App\Models\Topic',
             'controller'            => null,
@@ -93,7 +93,49 @@ class TopicsBreadSeeder extends Seeder
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 5,
-            ]
+            ],
+            'topic_belongsto_main_theme_relationship' => [
+                'type'         => 'relationship',
+                'display_name' => 'Основная тема',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'details'      => [
+                    'model'       => 'App\\Models\\Theme',
+                    'table'       => 'themes',
+                    'type'        => 'belongsTo',
+                    'column'      => 'main_theme_id',
+                    'key'         => 'id',
+                    'label'       => 'title',
+                    'pivot_table' => 'data_rows',
+                    'pivot'       => 0,
+                ],
+                'order'        => 6,
+            ],
+            'topic_belongsto_secondary_theme_relationship' => [
+                'type'         => 'relationship',
+                'display_name' => 'Дополнительная тема',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'details'      => [
+                    'model'       => 'App\\Models\\Theme',
+                    'table'       => 'themes',
+                    'type'        => 'belongsTo',
+                    'column'      => 'secondary_theme_id',
+                    'key'         => 'id',
+                    'label'       => 'title',
+                    'pivot_table' => 'data_rows',
+                    'pivot'       => 0,
+                ],
+                'order'        => 7,
+            ],
         ];
     }
 
@@ -109,7 +151,7 @@ class TopicsBreadSeeder extends Seeder
             'color'       => null,
             'parent_id'   => null,
             'parameters' => null,
-            'order'       => 4,
+            'order'       => 5,
         ];
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Permission;
 use TCG\Voyager\Models\Role;
 
-class TopicsBreadPermissionsSeeder extends Seeder
+class BreadPermissionsSeeder extends Seeder
 {
     /**
      * Auto generated seed file.

@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.1 / 2023.11.28</p>
-    <p>Bread migration</p>
+    <p>version 0.4.2 / 2023.11.29</p>
+    <p>Themes model and BREAD</p>
 </body>
 
 </html>

@@ -4,10 +4,17 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Topic extends Model
 {
     protected $fillable = [
+        'title',
         'body',
     ];
+
+    public function topic(): BelongsTo
+    {
+        return $this->belongsTo(Theme::class);
+    }
 }
