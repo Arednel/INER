@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.2 / 2023.11.29</p>
-    <p>Themes model and BREAD</p>
+    <p>version 0.4.3 / 2023.11.29</p>
+    <p>Login css</p>
 </body>
 
 </html>

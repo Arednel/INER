@@ -100,12 +100,9 @@
                             <div class="col-md-6">
                                 <div class="templatemo_hometop_title">AENEAN SOLICIT</div>
                                 <div class="templatemo_hometop_subtitle">DUIS SEDDIO SIT AMETIONAL</div>
-                                <p>Gloss is free responsive mobile template for everyone. Please tell your friends about
-                                    <span class="bluetext">template</span><span class="greentext">mo</span>.com website.
-                                    This layout is based on Bootstrap v3.1.1 framework. Credits go to <a rel="nofollow"
-                                        href="http://www.smashingmagazine.com/2012/11/20/art-professions-icons-png/">Art
-                                        Professions</a> Icon and <a rel="nofollow"
-                                        href="http://unsplash.com">Unsplash</a> for images used in this template.
+                                <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed
+                                    non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad
+                                    litora torquent per conubia nostra.
                                 </p>
                                 <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed
                                     non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad

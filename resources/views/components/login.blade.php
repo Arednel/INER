@@ -1,26 +1,5 @@
-<style>
-    .blue-btn {
-        background: #472DC8;
-        -webkit-box-shadow: 0px 2px 4px rgba(165, 163, 174, 0.3);
-        box-shadow: 0px 2px 4px rgba(165, 163, 174, 0.3);
-        color: #fff;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 18px;
-        letter-spacing: 0.43px;
-    }
-
-    .blue-btn:hover {
-        background: #fff;
-        color: #472DC8;
-    }
-
-    .form-item__btn {
-        width: 100%;
-        height: 38px;
-        margin-bottom: 10px;
-    }
-</style>
+<link rel="stylesheet" href={{ asset('css/login.css') }}>
+<link rel="stylesheet" href={{ asset('css/input-anim.css') }}>
 
 <div class="clear"></div>
 <div class="content about" id="menu-3">
@@ -28,7 +7,9 @@
         <div class="row templatemo_about_wrapper">
             <div class="col-md-12 gradient">
                 <div class="templatemo_about">
+
                     <div class="templatemo_about_title">Добро пожаловать!</div>
+                    <br>
                     <div class="templatemo_about_subtitle">Пожалуйста, войдите в свою учетную запись</div>
 
                     <form method="POST" action="/Login" class="form">
