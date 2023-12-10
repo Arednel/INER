@@ -28,7 +28,7 @@
                                             @if (Auth::check())
                                                 <li wire:click="changeView('gallery')">
                                                     <a class="show-1 templatemo_page2" href="#">
-                                                        <span class="fa fa-picture-o"></span>Темы</a>
+                                                        <span class="fa fa-picture-o"></span>Дисциплины</a>
                                                 </li>
                                                 <li>
                                                     <a href="logout">

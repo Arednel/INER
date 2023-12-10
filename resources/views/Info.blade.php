@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.5 / 2023.12.10</p>
-    <p>Changed Theme to Subject and fixes</p>
+    <p>version 0.4.5.1 / 2023.12.10</p>
+    <p>Changed Theme to Subject</p>
 </body>
 
 </html>
