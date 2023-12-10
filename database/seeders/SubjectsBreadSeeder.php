@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use VoyagerBread\Traits\BreadSeeder;
 
-class ThemesBreadSeeder extends Seeder
+class SubjectsBreadSeeder extends Seeder
 {
     use BreadSeeder;
 
@@ -13,12 +13,12 @@ class ThemesBreadSeeder extends Seeder
     {
         return [
             // usually the name of the table
-            'name'                  => 'themes',
-            'slug'                  => 'themes',
-            'display_name_singular' => 'Раздел',
-            'display_name_plural'   => 'Разделы',
+            'name'                  => 'subjects',
+            'slug'                  => 'subjects',
+            'display_name_singular' => 'Дисциплина',
+            'display_name_plural'   => 'Дисциплины',
             'icon'                  => 'voyager-categories',
-            'model_name'            => 'App\Models\Theme',
+            'model_name'            => 'App\Models\Subject',
             'controller'            => null,
             'generate_permissions'  => 1,
             'description'           => null,
@@ -48,7 +48,7 @@ class ThemesBreadSeeder extends Seeder
             ],
             'title' => [
                 'type'         => 'text',
-                'display_name' => 'Название раздела',
+                'display_name' => 'Название дисциплины',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -89,9 +89,9 @@ class ThemesBreadSeeder extends Seeder
     {
         return [
             'role'        => 'admin',
-            'title'       => 'Разделы',
+            'title'       => 'Дисциплины',
             'url'         => '',
-            'route'       => 'voyager.themes.index',
+            'route'       => 'voyager.subjects.index',
             'target'      => '_self',
             'icon_class'  => 'voyager-categories',
             'color'       => null,

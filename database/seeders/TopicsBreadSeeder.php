@@ -94,7 +94,7 @@ class TopicsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 5,
             ],
-            'topic_belongsto_main_theme_relationship' => [
+            'topic_belongsto_main_subject_relationship' => [
                 'type'         => 'relationship',
                 'display_name' => 'Основная тема',
                 'required'     => 1,
@@ -104,10 +104,10 @@ class TopicsBreadSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => [
-                    'model'       => 'App\\Models\\Theme',
-                    'table'       => 'themes',
+                    'model'       => 'App\\Models\\Subject',
+                    'table'       => 'subjects',
                     'type'        => 'belongsTo',
-                    'column'      => 'main_theme_id',
+                    'column'      => 'main_subject_id',
                     'key'         => 'id',
                     'label'       => 'title',
                     'pivot_table' => 'data_rows',
@@ -115,7 +115,7 @@ class TopicsBreadSeeder extends Seeder
                 ],
                 'order'        => 6,
             ],
-            'topic_belongsto_secondary_theme_relationship' => [
+            'topic_belongsto_secondary_subject_relationship' => [
                 'type'         => 'relationship',
                 'display_name' => 'Дополнительная тема',
                 'required'     => 0,
@@ -125,10 +125,10 @@ class TopicsBreadSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => [
-                    'model'       => 'App\\Models\\Theme',
-                    'table'       => 'themes',
+                    'model'       => 'App\\Models\\Subject',
+                    'table'       => 'subjects',
                     'type'        => 'belongsTo',
-                    'column'      => 'secondary_theme_id',
+                    'column'      => 'secondary_subject_id',
                     'key'         => 'id',
                     'label'       => 'title',
                     'pivot_table' => 'data_rows',
@@ -136,9 +136,9 @@ class TopicsBreadSeeder extends Seeder
                 ],
                 'order'        => 7,
             ],
-            'main_theme_id' => [
+            'main_subject_id' => [
                 'type'         => 'number',
-                'display_name' => 'main_theme_id',
+                'display_name' => 'main_subject_id',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -146,10 +146,10 @@ class TopicsBreadSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => [
-                    'model'       => 'App\\Models\\Theme',
-                    'table'       => 'themes',
+                    'model'       => 'App\\Models\\Subject',
+                    'table'       => 'subjects',
                     'type'        => 'belongsTo',
-                    'column'      => 'secondary_theme_id',
+                    'column'      => 'secondary_subject_id',
                     'key'         => 'id',
                     'label'       => 'title',
                     'pivot_table' => 'data_rows',

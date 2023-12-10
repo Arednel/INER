@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->text('body');
-            $table->integer('main_theme_id');
-            $table->integer('secondary_theme_id');
+            $table->integer('main_subject_id');
+            $table->integer('secondary_subject_id')->nullable();
             $table->timestamps();
         });
     }

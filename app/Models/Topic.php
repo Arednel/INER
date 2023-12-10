@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Subject;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +16,6 @@ class Topic extends Model
 
     public function topic(): BelongsTo
     {
-        return $this->belongsTo(Theme::class);
+        return $this->belongsTo(Subject::class);
     }
 }
