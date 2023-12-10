@@ -136,6 +136,27 @@ class TopicsBreadSeeder extends Seeder
                 ],
                 'order'        => 7,
             ],
+            'main_theme_id' => [
+                'type'         => 'number',
+                'display_name' => 'main_theme_id',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'details'      => [
+                    'model'       => 'App\\Models\\Theme',
+                    'table'       => 'themes',
+                    'type'        => 'belongsTo',
+                    'column'      => 'secondary_theme_id',
+                    'key'         => 'id',
+                    'label'       => 'title',
+                    'pivot_table' => 'data_rows',
+                    'pivot'       => 0,
+                ],
+                'order'        => 7,
+            ],
         ];
     }
 
