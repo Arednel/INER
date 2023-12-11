@@ -22,6 +22,10 @@ Route::view('/', 'Index')->name('index');
 Route::view('/index', 'Index');
 Route::view('/Index', 'Index');
 
+Route::view('/Subjects', 'Subjects');
+
+Route::view('/Login', 'Login');
+
 //Login
 Route::post('/Login', [LoginController::class, 'login']);
 

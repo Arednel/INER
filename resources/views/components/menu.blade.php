@@ -22,12 +22,12 @@
                                     <div class="collapse navbar-collapse main_menu" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
                                             <li wire:click="changeView('main-page')">
-                                                <a class="show-1 templatemo_home" href="#">
+                                                <a class="show-1 templatemo_home" href="/">
                                                     <span class="fa fa-home"></span>Главная</a>
                                             </li>
                                             @if (Auth::check())
-                                                <li wire:click="changeView('gallery')">
-                                                    <a class="show-1 templatemo_page2" href="#">
+                                                <li wire:click="changeView('subjects')">
+                                                    <a class="show-1 templatemo_page2" href="/Subjects">
                                                         <span class="fa fa-picture-o"></span>Дисциплины</a>
                                                 </li>
                                                 <li>
@@ -36,8 +36,8 @@
                                                     </a>
                                                 </li>
                                             @else
-                                                <li wire:click="changeView('main-page')">
-                                                    <a class="show-1 templatemo_page3" href="#">
+                                                <li wire:click="changeView('login')">
+                                                    <a class="show-1 templatemo_page3" href="/Login">
                                                         <span class="fa fa-users"></span>Войти</a>
                                                 </li>
                                             @endif
@@ -53,10 +53,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="menu-container">
-        @include($currentView)
     </div>
 
 </div>

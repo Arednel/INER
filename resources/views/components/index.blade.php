@@ -1,6 +1,5 @@
 <div class="homepage" id="menu-1">
     <div class="container">
-        <!-- home start -->
         <div class="row">
             <div class="templatemo_homewrapper shadow">
                 <div class="templatemo_hometop_bg">
@@ -114,6 +113,5 @@
                 </div>
             </div>
         </div>
-        <!-- home end -->
     </div>
 </div>

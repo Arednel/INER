@@ -1,8 +1,7 @@
 <link rel="stylesheet" href={{ asset('css/login.css') }}>
 <link rel="stylesheet" href={{ asset('css/input-anim.css') }}>
 
-<div class="clear"></div>
-<div class="content about" id="menu-3">
+<div class="about" id="menu-3">
     <div class="container">
         <div class="row templatemo_about_wrapper">
             <div class="col-md-12 gradient">
