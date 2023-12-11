@@ -41,7 +41,7 @@
     <a href="/">← На главную</a>
 
     <p>version 0.4.7.2 / 2023.12.11</p>
-    <p>Route auth</p>
+    <p>Subjects page</p>
 </body>
 
 </html>
