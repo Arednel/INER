@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.6 / 2023.12.11</p>
-    <p>Livewire removed</p>
+    <p>version 0.4.7 / 2023.12.11</p>
+    <p>Subjects page</p>
 </body>
 
 </html>

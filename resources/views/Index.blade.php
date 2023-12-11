@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
+<html>
+
 <head>
-    <title>Main page</title>
+    <title>Index</title>
 
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800'
         rel='stylesheet' type='text/css'>
@@ -17,9 +17,7 @@
     <link rel="stylesheet" href={{ asset('css/animate.css') }}>
 
     <script src={{ asset('js/jquery-1.11.1.min.js') }}></script>
-    <script src={{ asset('js/jquery.lightbox.js') }}></script>
     <script src={{ asset('js/bootstrap-collapse.js') }}></script>
-
 </head>
 
 <body>
