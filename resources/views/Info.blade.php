@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.7 / 2023.12.11</p>
-    <p>Subjects page</p>
+    <p>version 0.4.7.2 / 2023.12.11</p>
+    <p>Route auth</p>
 </body>
 
 </html>

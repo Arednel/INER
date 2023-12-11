@@ -18,23 +18,23 @@ use App\Http\Controllers\LoginController;
 */
 
 //Main page
-Route::view('/', 'Index')->name('index');
-Route::view('/index', 'Index');
+Route::view('/', 'Index')->name('Index');
 Route::view('/Index', 'Index');
+Route::view('/index', 'Index');
 
-Route::view('/Subjects', 'Subjects');
+//Subjects main page
+Route::view('/Subjects', 'Subjects')->middleware('auth');
 
-Route::view('/Login', 'Login');
+//Login page
+Route::view('/Login', 'Login')->name('Login');
+Route::view('/login', 'Login');
 
-//Login
+//Login logic
 Route::post('/Login', [LoginController::class, 'login']);
 
 //Logout
 Route::get('/Logout', [LoginController::class, 'logout']);
 Route::get('/logout', [LoginController::class, 'logout']);
-
-//For testing purposes
-Route::view('/Test', 'Test');
 
 //Info page 
 Route::view('/Info', 'Info');
@@ -45,3 +45,6 @@ Route::resource('topics', TopicController::class)->middleware('auth');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+//For testing purposes
+Route::view('/Test', 'Test');
