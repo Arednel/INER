@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('body');
             $table->integer('main_subject_id');
             $table->integer('secondary_subject_id')->nullable();
+            $table->integer('order')->nullable();
+            $table->integer('required_topic_id')->nullable();
             $table->timestamps();
         });
     }
