@@ -30,6 +30,9 @@ Route::get('/Subjects', [SubjectController::class, 'index'])->middleware('auth')
 //All topics with this subject id
 Route::get('/Subject/{id}', [TopicController::class, 'index'])->middleware('auth');
 
+//Show topic
+Route::get('/Topic/{id}', [TopicController::class, 'show'])->middleware('auth');
+
 //Login page
 Route::view('/Login', 'Login')->name('Login');
 Route::view('/login', 'Login');
@@ -44,8 +47,6 @@ Route::get('/logout', [LoginController::class, 'logout']);
 //Info page 
 Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
-
-Route::resource('topics', TopicController::class)->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

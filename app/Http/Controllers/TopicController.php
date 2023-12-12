@@ -11,9 +11,9 @@ class TopicController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $main_subject_id)
     {
-        $topics = Topic::orderByRaw('-order_int DESC')->get();
+        $topics = Topic::where('main_subject_id', $main_subject_id)->orderByRaw('-order_int DESC')->get();
 
         return view('topic.index', ['topics' => $topics]);
     }
@@ -39,7 +39,9 @@ class TopicController extends Controller
      */
     public function show(string $id)
     {
-        dd('show');
+        $topic = Topic::where('id', $id)->first();
+
+        return view('topic.show', ['topic' => $topic]);
     }
 
     /**
