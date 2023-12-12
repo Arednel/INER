@@ -1,4 +1,4 @@
-<div class="homepage" id="menu-1">
+<div class="homepage">
     <div class="container">
         <div class="row">
             <div class="templatemo_homewrapper shadow">

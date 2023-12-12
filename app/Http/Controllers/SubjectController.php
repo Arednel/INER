@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Topic;
+use App\Models\Subject;
 
 use Illuminate\Http\Request;
 
-class TopicController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $topics = Topic::orderByRaw('-order_int DESC')->get();
+        $subjects = Subject::all();
 
-        return view('topic.index', ['topics' => $topics]);
+        return view('subject.index', ['subjects' => $subjects]);
     }
 
     /**

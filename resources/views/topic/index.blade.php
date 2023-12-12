@@ -3,28 +3,53 @@
 <html>
 
 <head>
+    <title>Topics</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Все темы</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800'
+        rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href={{ asset('css/font-awesome.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/templatemo_misc.css') }}>
+    <link rel="stylesheet" href={{ asset('css/templatemo_style.css') }}>
+    <link rel="stylesheet" href={{ asset('css/animate.css') }}>
+
+    <script src={{ asset('js/jquery-1.11.1.min.js') }}></script>
+    <script src={{ asset('js/bootstrap-collapse.js') }}></script>
 </head>
 
 <style>
-    .news {
-        border: 1px solid black;
-        margin: 15px;
+    .subject_button {
+        font-size: 20px;
+        margin-left: 20px;
+        margin-bottom: 60px;
+        border: 5px solid white;
+        height: 80px;
+        width: 100%;
+        text-align: center;
     }
 </style>
 
 <body>
-    <br>
-    <a href="/">← На главную</a>
-    <br>
-    <hr>
-    @foreach ($topics as $topic)
-        <h2>{{ $topic->title }}</h2>
-        {!! $topic->body !!}
-        <hr>
-    @endforeach
+    @include('components.menu')
+
+    <div class="gallery">
+        <div class="container">
+            <div class="row gradient templatemo_gallery_wrapper">
+                @foreach ($topics as $topic)
+                    <div class="col-sm-4">
+                        <button class="subject_button blue"
+                            onclick="location.href='/Topic/{{ $topic->id }}'">{{ $topic->title }}</button>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    @include('components.footer')
+
 </body>
 
 </html>

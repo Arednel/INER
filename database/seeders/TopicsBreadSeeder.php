@@ -94,7 +94,7 @@ class TopicsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 5,
             ],
-            'order' => [
+            'order_int' => [
                 'type'         => 'number',
                 'display_name' => 'Порядок темы',
                 'required'     => 0,

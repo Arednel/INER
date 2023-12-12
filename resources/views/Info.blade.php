@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.4.8 / 2023.12.12</p>
-    <p>Topic required id and Order</p>
+    <p>version 0.4.9 / 2023.12.13</p>
+    <p>Subject and Topic logic</p>
 </body>
 
 </html>

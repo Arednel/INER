@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
             $table->text('title');
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->integer('main_subject_id');
             $table->integer('secondary_subject_id')->nullable();
-            $table->integer('order')->nullable();
+            $table->integer('order_int')->nullable();
             $table->integer('required_topic_id')->nullable();
             $table->timestamps();
         });

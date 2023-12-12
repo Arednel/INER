@@ -20,10 +20,33 @@
     <script src={{ asset('js/bootstrap-collapse.js') }}></script>
 </head>
 
+<style>
+    .subject_button {
+        font-size: 20px;
+        margin-left: 20px;
+        margin-bottom: 60px;
+        border: 5px solid white;
+        height: 80px;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
 <body>
     @include('components.menu')
 
-    @include('components.subjects')
+    <div class="gallery">
+        <div class="container">
+            <div class="row gradient templatemo_gallery_wrapper">
+                @foreach ($subjects as $subject)
+                    <div class="col-sm-4">
+                        <button class="subject_button blue"
+                            onclick="location.href='/Subject/{{ $subject->id }}'">{{ $subject->title }}</button>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 
     @include('components.footer')
 

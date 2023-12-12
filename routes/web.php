@@ -3,8 +3,10 @@
 use TCG\Voyager\Facades\Voyager;
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TopicController;
+
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TopicController;
+use App\Http\Controllers\SubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,10 @@ Route::view('/Index', 'Index');
 Route::view('/index', 'Index');
 
 //Subjects main page
-Route::view('/Subjects', 'Subjects')->middleware('auth');
+Route::get('/Subjects', [SubjectController::class, 'index'])->middleware('auth');
+
+//All topics with this subject id
+Route::get('/Subject/{id}', [TopicController::class, 'index'])->middleware('auth');
 
 //Login page
 Route::view('/Login', 'Login')->name('Login');
