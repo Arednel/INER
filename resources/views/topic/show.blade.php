@@ -37,11 +37,15 @@
         margin-bottom: 20px;
     }
 
+    /* Auto scale image */
     .topic_body img {
         max-width: 1070px;
-
-        /* Auto scale height */
         height: auto;
+    }
+
+    /* To normally show text */
+    .topic_body td {
+        padding: 0 3px;
     }
 </style>
 
