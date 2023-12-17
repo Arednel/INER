@@ -4,6 +4,7 @@ use TCG\Voyager\Facades\Voyager;
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\SubjectController;
@@ -32,6 +33,12 @@ Route::get('/Subject/{id}', [TopicController::class, 'index'])->middleware('auth
 
 //Show topic
 Route::get('/Topic/{id}', [TopicController::class, 'show'])->middleware('auth');
+
+//Show topic questions
+Route::get('/Topic/{id}/quiz', [TopicController::class, 'quiz'])->middleware('auth');
+
+//When completing quiz
+Route::post('/Quiz/Complete', [QuizController::class, 'Complete'])->middleware('auth');
 
 //Login page
 Route::view('/Login', 'Login')->name('Login');

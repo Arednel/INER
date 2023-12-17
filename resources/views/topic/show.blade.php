@@ -61,7 +61,8 @@
                     {!! $topic->body !!}
                 </div>
 
-                <button class="subject_button blue" onclick="location.href='/'">Перейти к заданию</button>
+                <button class="subject_button blue" onclick="location.href='/Topic/{{ $topic->id }}/quiz'">Перейти к
+                    заданию</button>
             </div>
         </div>
     </div>

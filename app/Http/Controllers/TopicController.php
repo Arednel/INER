@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Topic;
+use App\Models\Question;
+use App\Models\Answer;
 
 use Illuminate\Http\Request;
 
@@ -66,5 +68,23 @@ class TopicController extends Controller
     public function destroy(string $id)
     {
         dd('destroy');
+    }
+
+    public function quiz(string $topic_id)
+    {
+        $questions = Question::where('topic_id', $topic_id)->get();
+
+        foreach ($questions as $question) {
+            $answers[$question->id] = Answer::where('question_id', $question->id)->get();
+        }
+
+        return view(
+            'quiz.index',
+            [
+                'topic_id' => $topic_id,
+                'questions' => $questions,
+                'answers' => $answers
+            ]
+        );
     }
 }
