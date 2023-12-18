@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.5.4 / 2023.12.18</p>
-    <p>Quiz logic</p>
+    <p>version 0.5.4.1 / 2023.12.18</p>
+    <p>Quiz logic precaution</p>
 </body>
 
 </html>
