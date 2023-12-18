@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Topic;
-use App\Models\Question;
 use App\Models\Answer;
+use App\Models\Question;
+use App\Models\UserTopicResult;
 
 use Illuminate\Http\Request;
 
@@ -45,11 +46,20 @@ class TopicController extends Controller
 
         $topic_has_questions = Question::where('topic_id', $id)->exists();
 
+        if ($topic_has_questions) {
+            $topic_completed = UserTopicResult::where('topic_id', $id)
+                ->where('user_id', auth()->user()->id)
+                ->exists();
+
+            //get score and then show it
+        }
+
         return view(
             'topic.show',
             [
                 'topic' => $topic,
-                'topic_has_questions' => $topic_has_questions
+                'topic_has_questions' => $topic_has_questions,
+                'topic_completed' => $topic_completed
             ]
         );
     }
@@ -80,6 +90,13 @@ class TopicController extends Controller
 
     public function quiz(string $topic_id)
     {
+        $topic_completed = UserTopicResult::where('topic_id', $topic_id)
+            ->where('user_id', auth()->user()->id)
+            ->exists();
+        if ($topic_completed) {
+            dd('show error that topic is completed');
+        }
+
         $questions = Question::where('topic_id', $topic_id)->get();
 
         foreach ($questions as $question) {

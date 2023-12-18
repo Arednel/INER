@@ -33,7 +33,7 @@
 
                     @csrf
 
-                    <input type="hidden" name="topic" value="{{ $topic_id }}">
+                    <input type="hidden" name="topic_id" value="{{ $topic_id }}">
 
                     @foreach ($questions as $question)
                         <div class="question_div">

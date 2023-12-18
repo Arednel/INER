@@ -14,7 +14,7 @@ class Topic extends Model
         'body',
     ];
 
-    public function topic(): BelongsTo
+    public function subject(): BelongsTo
     {
         return $this->belongsTo(Subject::class);
     }

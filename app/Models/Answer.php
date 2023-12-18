@@ -13,7 +13,7 @@ class Answer extends Model
         'title',
     ];
 
-    public function topic(): BelongsTo
+    public function question(): BelongsTo
     {
         return $this->belongsTo(Question::class);
     }
