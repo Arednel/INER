@@ -43,7 +43,15 @@ class TopicController extends Controller
     {
         $topic = Topic::where('id', $id)->first();
 
-        return view('topic.show', ['topic' => $topic]);
+        $topic_has_questions = Question::where('topic_id', $id)->exists();
+
+        return view(
+            'topic.show',
+            [
+                'topic' => $topic,
+                'topic_has_questions' => $topic_has_questions
+            ]
+        );
     }
 
     /**
