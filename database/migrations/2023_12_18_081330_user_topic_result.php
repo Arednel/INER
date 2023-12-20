@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('topic_id');
             $table->integer('max_score');
             $table->integer('user_score');
+            $table->integer('user_score_to_hundred');
             $table->timestamps();
         });
     }

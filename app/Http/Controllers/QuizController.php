@@ -24,7 +24,7 @@ class QuizController extends Controller
 
         if ($request->question) {
             foreach ($request->question as $question_id => $answer_id) {
-                //Create database record for this question
+                // Create database record for this question
                 UserAnswer::create([
                     'user_id' => auth()->user()->id,
                     'question_id' => $question_id,
@@ -44,6 +44,7 @@ class QuizController extends Controller
             dd('there is no answers');
         }
 
+        $user_score_to_hundred = intval($user_score * (100 / $max_score));
 
         //Create database record for this topic
         UserTopicResult::create([
@@ -51,8 +52,9 @@ class QuizController extends Controller
             'topic_id' => $request->topic_id,
             'max_score' => $max_score,
             'user_score' => $user_score,
+            'user_score_to_hundred' => $user_score_to_hundred,
         ]);
 
-        return view('Result', ['user_score' => $user_score, 'max_score' => $max_score]);
+        return view('quiz.result', ['user_score_to_hundred' => $user_score_to_hundred]);
     }
 }

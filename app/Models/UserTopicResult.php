@@ -15,6 +15,7 @@ class UserTopicResult extends Model
         'topic_id',
         'max_score',
         'user_score',
+        'user_score_to_hundred',
     ];
 
     public function user(): BelongsTo
