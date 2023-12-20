@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.5.4.2 / 2023.12.20</p>
-    <p>Quiz result user score to hundred</p>
+    <p>version 0.5.5 / 2023.12.20</p>
+    <p>Users bread create changed</p>
 </body>
 
 </html>
