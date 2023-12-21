@@ -188,7 +188,7 @@ class TopicController extends Controller
             $browseRowsId++;
         }
 
-        return view('question.topic.browse', compact(
+        return view('topic.question.browse', compact(
             'actions',
             'dataType',
             'dataTypeContent',
