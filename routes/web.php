@@ -58,7 +58,7 @@ Route::view('/info', 'Info');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::get('topic/questions/{topic_id}', [TopicController::class, 'Test'])->name('topic_questions');
+    Route::get('topic/questions/{topic_id}', [TopicController::class, 'questions'])->name('topic_questions');
 });
 
 //For testing purposes

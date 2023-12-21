@@ -146,7 +146,7 @@ class TopicController extends Controller
         );
     }
 
-    public function Test(Request $request, string $topic_id)
+    public function questions(Request $request, string $topic_id)
     {
         //This function return questions (or any other slug) index voyager view
         $dataType = Voyager::model('DataType')->where('slug', '=', 'questions')->first();
@@ -171,7 +171,24 @@ class TopicController extends Controller
             }
         });
 
-        return view('browse', compact(
+        //Remove topics from questions table
+        foreach ($dataTypeContent as $question) {
+            unset($question->topic_id);
+        }
+
+        //Remove table head
+        $browseRowsId = 0;
+        foreach ($dataType->browseRows as $row) {
+            if (
+                $row->getTranslatedAttribute('display_name')
+                == "Тема"
+            ) {
+                unset($dataType->browseRows[$browseRowsId]);
+            }
+            $browseRowsId++;
+        }
+
+        return view('question.topic.browse', compact(
             'actions',
             'dataType',
             'dataTypeContent',

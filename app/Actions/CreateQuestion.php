@@ -8,7 +8,7 @@ class CreateQuestion extends AbstractAction
 {
     public function getTitle()
     {
-        return 'Посмотреть результаты';
+        return 'Посмотреть вопросы';
     }
 
     public function getIcon()
