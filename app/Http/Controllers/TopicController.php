@@ -18,7 +18,25 @@ class TopicController extends Controller
      */
     public function index(string $main_subject_id)
     {
+        //orderByRaw is to sort despite if order for topic exists or not
         $topics = Topic::where('main_subject_id', $main_subject_id)->orderByRaw('-order_int DESC')->get();
+
+        foreach ($topics as $topic) {
+            if ($topic->required_topic_id) {
+                $topic->canStartTopic = UserTopicResult::where('user_id', auth()->user()->id)
+                    ->where('topic_id', $topic->required_topic_id)
+                    ->exists();
+
+                //If can't start topic
+                if (!$topic->canStartTopic) {
+                    //Get required topic title
+                    $topic->requiredTopicTitle = Topic::where('id', $topic->required_topic_id)->first()->title;
+
+                    //Get required topic->subject title
+                    $topic->requiredSubjectTitle = $topic->subject()->first()->title;
+                }
+            }
+        }
 
         return view('topic.index', ['topics' => $topics]);
     }
@@ -45,6 +63,17 @@ class TopicController extends Controller
     public function show(string $id)
     {
         $topic = Topic::where('id', $id)->first();
+
+        //Check, if user can start this topic
+        if ($topic->required_topic_id) {
+            $canStartTopic = UserTopicResult::where('user_id', auth()->user()->id)
+                ->where('topic_id', $topic->required_topic_id)
+                ->exists();
+
+            if (!$canStartTopic) {
+                dd('Вы не можете начать эту тему');
+            }
+        }
 
         $topic_has_questions = Question::where('topic_id', $id)->exists();
 

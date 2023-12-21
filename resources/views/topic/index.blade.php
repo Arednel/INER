@@ -30,6 +30,19 @@
         width: 100%;
         text-align: center;
     }
+
+    .orange {
+        background-color: orange;
+        background-repeat: repeat-x;
+        padding: 5px 13px;
+        color: #ffffff;
+        outline: 1px solid #026cbe;
+        border: 1px solid #white;
+    }
+
+    .orange:hover {
+        background: red;
+    }
 </style>
 
 <body>
@@ -40,8 +53,20 @@
             <div class="row gradient templatemo_gallery_wrapper">
                 @foreach ($topics as $topic)
                     <div class="col-sm-4">
-                        <button class="subject_button blue"
-                            onclick="location.href='/Topic/{{ $topic->id }}'">{{ $topic->title }}</button>
+
+                        @if ($topic->required_topic_id)
+                            @if ($topic->canStartTopic)
+                                <button class="subject_button blue"
+                                    onclick="location.href='/Topic/{{ $topic->id }}'">{{ $topic->title }}</button>
+                            @else
+                                <button class="subject_button orange"
+                                    onclick="alert('Сначала выполните тему {{ $topic->requiredTopicTitle }} в дисциплине {{ $topic->requiredSubjectTitle }}')">
+                                    {{ $topic->title }}</button>
+                            @endif
+                        @else
+                            <button class="subject_button blue"
+                                onclick="location.href='/Topic/{{ $topic->id }}'">{{ $topic->title }}</button>
+                        @endif
                     </div>
                 @endforeach
             </div>
