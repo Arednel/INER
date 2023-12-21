@@ -9,6 +9,8 @@ use App\Models\UserTopicResult;
 
 use Illuminate\Http\Request;
 
+use TCG\Voyager\Facades\Voyager;
+
 class TopicController extends Controller
 {
     /**
@@ -111,5 +113,49 @@ class TopicController extends Controller
                 'answers' => $answers
             ]
         );
+    }
+
+    public function Test(Request $request, string $topic_id)
+    {
+        //This function return questions (or any other slug) index voyager view
+        $dataType = Voyager::model('DataType')->where('slug', '=', 'questions')->first();
+
+        $actions = [];
+        $orderColumn = [];
+        $usesSoftDeletes = false;
+        $isModelTranslatable = false;
+        $isServerSide = false;
+        $showCheckboxColumn = false;
+
+        //To search database
+        $getter = $dataType->server_side ? 'paginate' : 'get';
+        $model = app($dataType->model_name);
+        $query = $model::select($dataType->name . '.*');
+        $dataTypeContent = call_user_func([$query->latest($model::CREATED_AT), $getter]);
+
+        //Filter only results with this 
+        $dataTypeContent = $dataTypeContent->filter(function ($value, $key) use ($topic_id) {
+            if ($value['topic_id'] == $topic_id) {
+                return $value;
+            }
+        });
+
+        return view('browse', compact(
+            'actions',
+            'dataType',
+            'dataTypeContent',
+            'isModelTranslatable',
+            // 'search',
+            // 'orderBy',
+            'orderColumn',
+            // 'sortableColumns',
+            // 'sortOrder',
+            // 'searchNames',
+            'isServerSide',
+            // 'defaultSearchKey',
+            'usesSoftDeletes',
+            // 'showSoftDeleted',
+            'showCheckboxColumn'
+        ));
     }
 }
