@@ -54,6 +54,8 @@ class TopicController extends Controller
                 ->exists();
 
             //get score and then show it
+        } else {
+            $topic_completed = false;
         }
 
         return view(
