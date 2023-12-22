@@ -63,8 +63,9 @@
 
                 @if ($topic_has_questions)
                     @if ($topic_completed)
+                        <br>
                         <div>
-                            show score
+                            Ваш результат {{ $user_score_to_hundred }} баллов из 100
                         </div>
                     @else
                         <button class="subject_button blue"

@@ -87,12 +87,20 @@ class TopicController extends Controller
             $topic_completed = false;
         }
 
+        if ($topic_completed) {
+            $user_score_to_hundred = UserTopicResult::where('topic_id', $id)
+                ->where('user_id', auth()->user()->id)
+                ->first()
+                ->user_score_to_hundred;
+        }
+
         return view(
             'topic.show',
             [
                 'topic' => $topic,
                 'topic_has_questions' => $topic_has_questions,
-                'topic_completed' => $topic_completed
+                'topic_completed' => $topic_completed,
+                'user_score_to_hundred' => $user_score_to_hundred,
             ]
         );
     }
