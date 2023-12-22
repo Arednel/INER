@@ -75,23 +75,26 @@ class TopicController extends Controller
             }
         }
 
+        //Check if there are any questions in this topic
         $topic_has_questions = Question::where('topic_id', $id)->exists();
 
+        //Check if topic is completed by this user
         if ($topic_has_questions) {
             $topic_completed = UserTopicResult::where('topic_id', $id)
                 ->where('user_id', auth()->user()->id)
                 ->exists();
-
-            //get score and then show it
         } else {
             $topic_completed = false;
         }
 
+        //Show later score of this topic, if topic is completed
         if ($topic_completed) {
             $user_score_to_hundred = UserTopicResult::where('topic_id', $id)
                 ->where('user_id', auth()->user()->id)
                 ->first()
                 ->user_score_to_hundred;
+        } else {
+            $user_score_to_hundred = false;
         }
 
         return view(
