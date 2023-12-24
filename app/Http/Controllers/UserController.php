@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Subject;
-
 use Illuminate\Http\Request;
 
 use TCG\Voyager\Facades\Voyager;
 
-class SubjectController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $subjects = Subject::all();
-
-        return view('subject.index', ['subjects' => $subjects]);
+        dd('index');
     }
 
     /**
@@ -68,7 +64,7 @@ class SubjectController extends Controller
         dd('destroy');
     }
 
-    public function results(Request $request, string $subject_id)
+    public function results(Request $request, string $user_id)
     {
         //This function return questions (or any other slug) index voyager view
         $dataType = Voyager::model('DataType')->where('slug', '=', 'user-topic-results')->first();
@@ -87,10 +83,8 @@ class SubjectController extends Controller
         $dataTypeContent = call_user_func([$query->latest($model::CREATED_AT), $getter]);
 
         //Filter only results with this 
-        $dataTypeContent = $dataTypeContent->filter(function ($value, $key) use ($subject_id) {
-            if ($value['main_subject_id'] == $subject_id) {
-                return $value;
-            } else if ($value['secondary_subject_id'] == $subject_id) {
+        $dataTypeContent = $dataTypeContent->filter(function ($value, $key) use ($user_id) {
+            if ($value['user_id'] == $user_id) {
                 return $value;
             }
         });

@@ -14,8 +14,13 @@ class Topic extends Model
         'body',
     ];
 
-    public function subject(): BelongsTo
+    public function main_subject(): BelongsTo
     {
         return $this->belongsTo(Subject::class, 'main_subject_id');
+    }
+
+    public function secondary_subject(): BelongsTo
+    {
+        return $this->belongsTo(Subject::class, 'secondary_subject_id');
     }
 }

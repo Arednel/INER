@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Topic;
 use App\Models\Answer;
+use App\Models\Subject;
 use App\Models\Question;
-use App\Models\UserTopicResult;
 
 use Illuminate\Http\Request;
 
+use App\Models\UserTopicResult;
 use TCG\Voyager\Facades\Voyager;
 
 class TopicController extends Controller
@@ -33,7 +34,7 @@ class TopicController extends Controller
                     $topic->requiredTopicTitle = Topic::where('id', $topic->required_topic_id)->first()->title;
 
                     //Get required topic->subject title
-                    $topic->requiredSubjectTitle = $topic->subject()->first()->title;
+                    $topic->requiredSubjectTitle = Subject::where('id', $topic->required_topic_id)->first()->title;
                 }
             }
         }
@@ -199,7 +200,7 @@ class TopicController extends Controller
             $browseRowsId++;
         }
 
-        return view('topic.question.browse', compact(
+        return view('bread.browse', compact(
             'actions',
             'dataType',
             'dataTypeContent',
@@ -214,6 +215,43 @@ class TopicController extends Controller
             // 'defaultSearchKey',
             'usesSoftDeletes',
             // 'showSoftDeleted',
+            'showCheckboxColumn'
+        ));
+    }
+
+    public function results(Request $request, string $topic_id)
+    {
+        //This function return questions (or any other slug) index voyager view
+        $dataType = Voyager::model('DataType')->where('slug', '=', 'user-topic-results')->first();
+
+        $actions = [];
+        $orderColumn = [];
+        $usesSoftDeletes = false;
+        $isModelTranslatable = false;
+        $isServerSide = false;
+        $showCheckboxColumn = false;
+
+        //To search database
+        $getter = $dataType->server_side ? 'paginate' : 'get';
+        $model = app($dataType->model_name);
+        $query = $model::select($dataType->name . '.*');
+        $dataTypeContent = call_user_func([$query->latest($model::CREATED_AT), $getter]);
+
+        //Filter only results with this 
+        $dataTypeContent = $dataTypeContent->filter(function ($value, $key) use ($topic_id) {
+            if ($value['topic_id'] == $topic_id) {
+                return $value;
+            }
+        });
+
+        return view('bread.browse', compact(
+            'actions',
+            'dataType',
+            'dataTypeContent',
+            'isModelTranslatable',
+            'orderColumn',
+            'isServerSide',
+            'usesSoftDeletes',
             'showCheckboxColumn'
         ));
     }

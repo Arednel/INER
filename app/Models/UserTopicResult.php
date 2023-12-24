@@ -12,6 +12,8 @@ class UserTopicResult extends Model
 {
     protected $fillable = [
         'user_id',
+        'main_subject_id',
+        'secondary_subject_id',
         'topic_id',
         'max_score',
         'user_score',

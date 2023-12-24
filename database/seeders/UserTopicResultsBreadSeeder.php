@@ -58,6 +58,30 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 2,
             ],
+            'main_subject_id' => [
+                'type'         => 'number',
+                'display_name' => 'main_subject_id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 3,
+            ],
+            'secondary_subject_id' => [
+                'type'         => 'number',
+                'display_name' => 'secondary_subject_id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 3,
+            ],
             'topic_id' => [
                 'type'         => 'number',
                 'display_name' => 'topic_id',
@@ -68,7 +92,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 3,
+                'order'        => 5,
             ],
             'max_score' => [
                 'type'         => 'number',
@@ -80,7 +104,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 4,
+                'order'        => 6,
             ],
             'user_score' => [
                 'type'         => 'number',
@@ -92,7 +116,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 5,
+                'order'        => 7,
             ],
             'user_score_to_hundred' => [
                 'type'         => 'number',
@@ -104,7 +128,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 6,
+                'order'        => 8,
             ],
             'user_topic_result_belongsto_user_relationship' => [
                 'type'         => 'relationship',
@@ -125,7 +149,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                     'pivot_table' => 'data_rows',
                     'pivot'       => 0,
                 ],
-                'order'        => 7,
+                'order'        => 9,
             ],
             'user_topic_result_belongsto_topic_relationship' => [
                 'type'         => 'relationship',
@@ -146,7 +170,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                     'pivot_table' => 'data_rows',
                     'pivot'       => 0,
                 ],
-                'order'        => 8,
+                'order'        => 10,
             ],
             'created_at' => [
                 'type'         => 'timestamp',
@@ -158,7 +182,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 9,
+                'order'        => 11,
             ],
             'updated_at' => [
                 'type'         => 'timestamp',
@@ -170,7 +194,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 10,
+                'order'        => 12,
             ],
         ];
     }

@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class CreateQuestion extends AbstractAction
+class WatchQuestions extends AbstractAction
 {
     public function getTitle()
     {
@@ -25,6 +25,7 @@ class CreateQuestion extends AbstractAction
     {
         return [
             'class' => 'btn btn-sm btn-primary pull-right',
+            'style' => 'margin-right:5px;'
         ];
     }
 

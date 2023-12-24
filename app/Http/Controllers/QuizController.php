@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Topic;
 use App\Models\Answer;
 use App\Models\UserAnswer;
-use App\Models\UserTopicResult;
 
 use Illuminate\Http\Request;
+use App\Models\UserTopicResult;
 
 class QuizController extends Controller
 {
@@ -49,6 +50,8 @@ class QuizController extends Controller
         //Create database record for this topic
         UserTopicResult::create([
             'user_id' => auth()->user()->id,
+            'main_subject_id' => Topic::find($request->topic_id)->main_subject()->first()->id,
+            'secondary_subject_id' => Topic::find($request->topic_id)->secondary_subject()->first()->id,
             'topic_id' => $request->topic_id,
             'max_score' => $max_score,
             'user_score' => $user_score,

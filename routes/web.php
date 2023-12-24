@@ -5,6 +5,7 @@ use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\SubjectController;
@@ -59,6 +60,11 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::get('topic/questions/{topic_id}', [TopicController::class, 'questions'])->name('topic_questions');
+
+    //Show results
+    Route::get('topic/results/{topic_id}', [TopicController::class, 'results'])->name('topic_results');
+    Route::get('user/results/{user_id}', [UserController::class, 'results'])->name('user_results');
+    Route::get('subject/results/{main_subject_id}', [SubjectController::class, 'results'])->name('subject_results');
 });
 
 //For testing purposes
