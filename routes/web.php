@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\UserTopicResultsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('topic/results/{topic_id}', [TopicController::class, 'results'])->name('topic_results');
     Route::get('user/results/{user_id}', [UserController::class, 'results'])->name('user_results');
     Route::get('subject/results/{main_subject_id}', [SubjectController::class, 'results'])->name('subject_results');
+
+    Route::get('ExcelExport/User/{user_id}', [UserTopicResultsController::class, 'ExcelExportFromUser'])->name('results_download_from_user');
 });
 
 //For testing purposes

@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.5.9 / 2023.12.24</p>
-    <p>Results view and fixes</p>
+    <p>version 0.6.0 / 2024.01.03</p>
+    <p>Excel export step 1</p>
 </body>
 
 </html>

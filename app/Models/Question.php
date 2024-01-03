@@ -23,5 +23,6 @@ class Question extends Model
         $topic_name = $this->topic->title;
         return "{$topic_name} / {$this->title}";
     }
+
     public $additional_attributes = ['TopicNameAndQuestionName'];
 }

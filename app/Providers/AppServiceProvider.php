@@ -2,14 +2,15 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
+
 use TCG\Voyager\Facades\Voyager;
 
 use App\Actions\WatchQuestions;
 use App\Actions\WatchResultsUser;
 use App\Actions\WatchResultsTopic;
 use App\Actions\WatchResultsSubject;
-
-use Illuminate\Support\ServiceProvider;
+use App\Actions\DownloadResultUser;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,10 +31,16 @@ class AppServiceProvider extends ServiceProvider
             \URL::forceScheme('https');
         }
 
+
+        //Voyager action buttons
         Voyager::addAction(WatchQuestions::class);
 
+        //Watch results
         Voyager::addAction(WatchResultsUser::class);
         Voyager::addAction(WatchResultsSubject::class);
         Voyager::addAction(WatchResultsTopic::class);
+
+        //Download results
+        Voyager::addAction(DownloadResultUser::class);
     }
 }
