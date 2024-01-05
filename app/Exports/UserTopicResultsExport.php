@@ -2,26 +2,36 @@
 
 namespace App\Exports;
 
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithStrictNullComparison;
 
-class UserTopicResultsExport implements FromArray, WithStrictNullComparison, WithHeadings
+class UserTopicResultsExport implements FromArray, WithStrictNullComparison, WithHeadings, ShouldAutoSize
 {
-    protected $invoices;
+    protected $results;
 
-    public function __construct(array $invoices)
+    public function __construct(array $results)
     {
-        $this->invoices = $invoices;
+        $this->results = $results;
     }
 
     public function array(): array
     {
-        return $this->invoices;
+        return $this->results;
     }
 
     public function headings(): array
     {
-        return ["Пользователь", "Тема", "Баллов"];
+        return ["Пользователь", "Тема", "Баллов", "", "Средний балл"];
+    }
+
+    public function columnFormats(): array
+    {
+        return [
+            'C' => NumberFormat::FORMAT_NUMBER,
+        ];
     }
 }

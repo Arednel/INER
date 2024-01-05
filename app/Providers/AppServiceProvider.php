@@ -8,9 +8,11 @@ use TCG\Voyager\Facades\Voyager;
 
 use App\Actions\WatchQuestions;
 use App\Actions\WatchResultsUser;
-use App\Actions\WatchResultsTopic;
 use App\Actions\WatchResultsSubject;
+use App\Actions\WatchResultsTopic;
 use App\Actions\DownloadResultUser;
+use App\Actions\DownloadResultSubject;
+use App\Actions\DownloadResultTopic;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -42,5 +44,7 @@ class AppServiceProvider extends ServiceProvider
 
         //Download results
         Voyager::addAction(DownloadResultUser::class);
+        Voyager::addAction(DownloadResultSubject::class);
+        Voyager::addAction(DownloadResultTopic::class);
     }
 }

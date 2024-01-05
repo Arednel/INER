@@ -68,6 +68,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('subject/results/{main_subject_id}', [SubjectController::class, 'results'])->name('subject_results');
 
     Route::get('ExcelExport/User/{user_id}', [UserTopicResultsController::class, 'ExcelExportFromUser'])->name('results_download_from_user');
+    Route::get('ExcelExport/Subject/{subject_id}', [UserTopicResultsController::class, 'ExcelExportFromSubject'])->name('results_download_from_subject');
+    Route::get('ExcelExport/Topic/{topic_id}', [UserTopicResultsController::class, 'ExcelExportFromTopic'])->name('results_download_from_topic');
 });
 
 //For testing purposes

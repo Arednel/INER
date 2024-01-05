@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class DownloadResultUser extends AbstractAction
+class DownloadResultSubject extends AbstractAction
 {
     public function getTitle()
     {
@@ -31,11 +31,11 @@ class DownloadResultUser extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('results_download_from_user', ['user_id' => $this->data->id]);
+        return route('results_download_from_subject', ['subject_id' => $this->data->id]);
     }
 
     public function shouldActionDisplayOnDataType()
     {
-        return $this->dataType->slug == 'users';
+        return $this->dataType->slug == 'subjects';
     }
 }
