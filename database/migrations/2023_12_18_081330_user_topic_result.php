@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('main_subject_id');
-            $table->integer('secondary_subject_id');
+            $table->integer('secondary_subject_id')->nullable();
             $table->integer('topic_id');
             $table->integer('max_score');
             $table->integer('user_score');

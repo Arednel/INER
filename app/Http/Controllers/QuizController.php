@@ -51,7 +51,7 @@ class QuizController extends Controller
         UserTopicResult::create([
             'user_id' => auth()->user()->id,
             'main_subject_id' => Topic::find($request->topic_id)->main_subject()->first()->id,
-            'secondary_subject_id' => Topic::find($request->topic_id)->secondary_subject()->first()->id,
+            'secondary_subject_id' => optional(Topic::find($request->topic_id)->secondary_subject()->first())->id,
             'topic_id' => $request->topic_id,
             'max_score' => $max_score,
             'user_score' => $user_score,
