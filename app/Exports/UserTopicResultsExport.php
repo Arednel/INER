@@ -25,7 +25,7 @@ class UserTopicResultsExport implements FromArray, WithStrictNullComparison, Wit
 
     public function headings(): array
     {
-        return ["Пользователь", "Тема", "Баллов", "", "Средний балл"];
+        return ["ФИО", "Электронная почта", "Тема", "Баллов", "", "Средний балл"];
     }
 
     public function columnFormats(): array

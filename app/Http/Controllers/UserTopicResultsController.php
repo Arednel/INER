@@ -68,12 +68,14 @@ class UserTopicResultsController extends Controller
         dd('destroy');
     }
 
-    private function ExcelExport($user_topic_results)
+    private function ExcelExport($user_topic_results, $file_name)
     {
         $results = [];
 
         foreach ($user_topic_results as $user_topic_result) {
             $username = $user_topic_result->user->name;
+
+            $email = $user_topic_result->user->email;
 
             $topic_title = $user_topic_result->topic->title;
 
@@ -81,6 +83,7 @@ class UserTopicResultsController extends Controller
                 $results,
                 [
                     $username,
+                    $email,
                     $topic_title,
                     $user_topic_result->user_score_to_hundred
                 ]
@@ -100,7 +103,7 @@ class UserTopicResultsController extends Controller
 
         $export = new UserTopicResultsExport([$results]);
 
-        return Excel::download($export, 'results.xlsx');
+        return Excel::download($export, date('Y-m-d') . "_$file_name.xlsx");
     }
 
     public function ExcelExportFromUser(string $user_id)
@@ -109,7 +112,9 @@ class UserTopicResultsController extends Controller
         $user_topic_results = UserTopicResult::where('user_id', $user_id)
             ->get();
 
-        return $this->ExcelExport($user_topic_results);
+        $file_name = 'results_user';
+
+        return $this->ExcelExport($user_topic_results, $file_name);
     }
 
     public function ExcelExportFromSubject(string $subject_id)
@@ -119,7 +124,9 @@ class UserTopicResultsController extends Controller
             ->orWhere('secondary_subject_id', $subject_id)
             ->get();
 
-        return $this->ExcelExport($user_topic_results);
+        $file_name = 'results_subjecy';
+
+        return $this->ExcelExport($user_topic_results, $file_name);
     }
 
     public function ExcelExportFromTopic(string $topic_id)
@@ -128,6 +135,8 @@ class UserTopicResultsController extends Controller
         $user_topic_results = UserTopicResult::where('topic_id', $topic_id)
             ->get();
 
-        return $this->ExcelExport($user_topic_results);
+        $file_name = 'results_topic';
+
+        return $this->ExcelExport($user_topic_results, $file_name);
     }
 }
