@@ -27,12 +27,34 @@
     <div class="gallery">
         <div class="container">
             <div class="row gradient templatemo_gallery_wrapper">
+
+                @php
+                    $index = 1;
+                @endphp
                 @foreach ($subjects as $subject)
+                    {{-- Every 3 new row starts --}}
+                    @if ($index == 1)
+                        <div class="row">
+                    @endif
+
                     <div class="col-sm-4">
                         <button class="subject_button blue"
                             onclick="location.href='/Subject/{{ $subject->id }}'">{{ $subject->title }}</button>
                     </div>
+
+                    {{-- Every 3 new row starts --}}
+                    @php
+                        if ($index == 3) {
+                            echo '</div>';
+                        }
+
+                        $index++;
+                        if ($index == 4) {
+                            $index = 1;
+                        }
+                    @endphp
                 @endforeach
+
             </div>
         </div>
     </div>
