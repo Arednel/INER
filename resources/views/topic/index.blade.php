@@ -15,22 +15,13 @@
     <link rel="stylesheet" href={{ asset('css/templatemo_misc.css') }}>
     <link rel="stylesheet" href={{ asset('css/templatemo_style.css') }}>
     <link rel="stylesheet" href={{ asset('css/animate.css') }}>
+    <link rel="stylesheet" href={{ asset('css/buttons.css') }}>
 
     <script src={{ asset('js/jquery-1.11.1.min.js') }}></script>
     <script src={{ asset('js/bootstrap-collapse.js') }}></script>
 </head>
 
 <style>
-    .subject_button {
-        font-size: 20px;
-        margin-left: 20px;
-        margin-bottom: 60px;
-        border: 5px solid white;
-        height: 80px;
-        width: 100%;
-        text-align: center;
-    }
-
     .orange {
         background-color: orange;
         background-repeat: repeat-x;
