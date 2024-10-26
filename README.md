@@ -9,5 +9,7 @@
 7. php artisan db:seed --class=QuestionsBreadSeeder
 8. php artisan db:seed --class=AnswersBreadSeeder
 9. php artisan db:seed --class=UserTopicResultsBreadSeeder
-10. php artisan db:seed --class=BreadPermissionsSeeder
-11. php artisan voyager:admin admin@admin.com --create
+10. php artisan db:seed --class=TopicTasksBreadSeeder
+11. php artisan db:seed --class=UserTaskAnswersBreadSeeder
+12. php artisan db:seed --class=BreadPermissionsSeeder
+13. php artisan voyager:admin admin@admin.com --create

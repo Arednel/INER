@@ -2,7 +2,7 @@
     <div class="row">
         <div class="templatemo_footer">
 
-            <div class="col-md-6">Copyright &copy; 2022</div>
+            <div class="col-md-6">Copyright &copy; 2024</div>
 
             <div class="col-md-6">
                 <div class="social"><a href="#"><img src={{ asset('images/templatemo_fb.jpg') }} alt="facebook"></a>

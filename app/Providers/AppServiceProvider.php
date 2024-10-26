@@ -13,6 +13,7 @@ use App\Actions\WatchResultsTopic;
 use App\Actions\DownloadResultUser;
 use App\Actions\DownloadResultSubject;
 use App\Actions\DownloadResultTopic;
+use App\Actions\ReviewTaskAnswer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -46,5 +47,8 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addAction(DownloadResultUser::class);
         Voyager::addAction(DownloadResultSubject::class);
         Voyager::addAction(DownloadResultTopic::class);
+
+        //Review task answer
+        Voyager::addAction(ReviewTaskAnswer::class);
     }
 }

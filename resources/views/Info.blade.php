@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.6.2.2 / 2024.10.21</p>
-    <p>Excel name scheme</p>
+    <p>version 0.6.3 / 2024.10.26</p>
+    <p>Practical tasks</p>
 </body>
 
 </html>

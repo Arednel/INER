@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use VoyagerBread\Traits\BreadSeeder;
 
-class UserTopicResultsBreadSeeder extends Seeder
+class UserTaskAnswersBreadSeeder extends Seeder
 {
     use BreadSeeder;
 
@@ -13,12 +13,12 @@ class UserTopicResultsBreadSeeder extends Seeder
     {
         return [
             // usually the name of the table
-            'name'                  => 'user_topic_results',
-            'slug'                  => 'user-topic-results',
-            'display_name_singular' => 'Результат теста',
-            'display_name_plural'   => 'Результаты тестов',
+            'name'                  => 'user_task_answers',
+            'slug'                  => 'user-task-answers',
+            'display_name_singular' => 'Ответы на задания',
+            'display_name_plural'   => 'Ответы на задания',
             'icon'                  => 'voyager-categories',
-            'model_name'            => 'App\Models\UserTopicResult',
+            'model_name'            => 'App\Models\UserTaskAnswer',
             'controller'            => null,
             'generate_permissions'  => 1,
             'description'           => null,
@@ -52,35 +52,35 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
-                'edit'         => 1,
-                'add'          => 1,
+                'edit'         => 0,
+                'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 2,
             ],
             'main_subject_id' => [
                 'type'         => 'number',
-                'display_name' => 'main_subject_id',
+                'display_name' => 'Основная дисциплина',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
-                'edit'         => 1,
-                'add'          => 1,
+                'edit'         => 0,
+                'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 3,
             ],
             'secondary_subject_id' => [
                 'type'         => 'number',
-                'display_name' => 'secondary_subject_id',
+                'display_name' => 'Дополнительная дисциплина',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
-                'edit'         => 1,
-                'add'          => 1,
+                'edit'         => 0,
+                'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 3,
+                'order'        => 4,
             ],
             'topic_id' => [
                 'type'         => 'number',
@@ -88,15 +88,15 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
-                'edit'         => 1,
-                'add'          => 1,
+                'edit'         => 0,
+                'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 5,
             ],
-            'max_score' => [
+            'task_id' => [
                 'type'         => 'number',
-                'display_name' => 'max_score',
+                'display_name' => 'task_id',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -106,19 +106,19 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 6,
             ],
-            'user_score' => [
-                'type'         => 'number',
-                'display_name' => 'user_score',
+            'body' => [
+                'type'         => 'text',
+                'display_name' => 'Ответ на задание',
                 'required'     => 1,
-                'browse'       => 0,
-                'read'         => 0,
+                'browse'       => 1,
+                'read'         => 1,
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 7,
             ],
-            'user_score_to_hundred' => [
+            'user_score' => [
                 'type'         => 'number',
                 'display_name' => 'Балл',
                 'required'     => 1,
@@ -126,11 +126,11 @@ class UserTopicResultsBreadSeeder extends Seeder
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
-                'delete'       => 0,
+                'delete'       => 1,
                 'details'      => '',
                 'order'        => 8,
             ],
-            'user_topic_result_belongsto_user_relationship' => [
+            'user_task_answer_belongsto_user_relationship' => [
                 'type'         => 'relationship',
                 'display_name' => 'Пользователь',
                 'required'     => 1,
@@ -151,7 +151,7 @@ class UserTopicResultsBreadSeeder extends Seeder
                 ],
                 'order'        => 9,
             ],
-            'user_topic_result_belongsto_topic_relationship' => [
+            'user_task_answer_belongsto_topic_relationship' => [
                 'type'         => 'relationship',
                 'display_name' => 'Тема',
                 'required'     => 1,
@@ -203,15 +203,15 @@ class UserTopicResultsBreadSeeder extends Seeder
     {
         return [
             'role'        => 'admin',
-            'title'       => 'Результаты тестов',
+            'title'       => 'Ответы на задания',
             'url'         => '',
-            'route'       => 'voyager.user-topic-results.index',
+            'route'       => 'voyager.user-task-answers.index',
             'target'      => '_self',
             'icon_class'  => 'voyager-categories',
             'color'       => null,
             'parent_id'   => null,
             'parameters' => null,
-            'order'       => 7,
+            'order'       => 9,
         ];
     }
 }

@@ -6,6 +6,8 @@ use App\Models\Topic;
 use App\Models\Answer;
 use App\Models\Subject;
 use App\Models\Question;
+use App\Models\TopicTask;
+use App\Models\UserTaskAnswer;
 
 use Illuminate\Http\Request;
 
@@ -78,7 +80,6 @@ class TopicController extends Controller
 
         //Check if there are any questions in this topic
         $topic_has_questions = Question::where('topic_id', $id)->exists();
-
         //Check if topic is completed by this user
         if ($topic_has_questions) {
             $topic_completed = UserTopicResult::where('topic_id', $id)
@@ -87,7 +88,6 @@ class TopicController extends Controller
         } else {
             $topic_completed = false;
         }
-
         //Show later score of this topic, if topic is completed
         if ($topic_completed) {
             $user_score_to_hundred = UserTopicResult::where('topic_id', $id)
@@ -98,6 +98,30 @@ class TopicController extends Controller
             $user_score_to_hundred = false;
         }
 
+        //Check if there are topic task
+        $topic_has_task = TopicTask::where('topic_id', $id)->exists();
+        //Check if topic is completed by this user
+        if ($topic_has_task) {
+            $topic_task_completed = UserTaskAnswer::where('topic_id', $id)
+                ->where('user_id', auth()->user()->id)
+                ->exists();
+        } else {
+            $topic_task_completed = false;
+        }
+        //Show later score of this topic, if topic is completed
+        if ($topic_task_completed) {
+            $user_topic_result = UserTaskAnswer::where('topic_id', $id)
+                ->where('user_id', auth()->user()->id)
+                ->first();
+            if (!is_null($user_topic_result->user_score)) {
+                $user_task_score = $user_topic_result->user_score;
+            } else {
+                $user_task_score = null;
+            }
+        } else {
+            $user_task_score = null;
+        }
+
         return view(
             'topic.show',
             [
@@ -105,6 +129,9 @@ class TopicController extends Controller
                 'topic_has_questions' => $topic_has_questions,
                 'topic_completed' => $topic_completed,
                 'user_score_to_hundred' => $user_score_to_hundred,
+                'topic_has_task' => $topic_has_task,
+                'topic_task_completed' => $topic_task_completed,
+                'user_task_score' => $user_task_score,
             ]
         );
     }
@@ -154,6 +181,25 @@ class TopicController extends Controller
                 'topic_id' => $topic_id,
                 'questions' => $questions,
                 'answers' => $answers
+            ]
+        );
+    }
+
+    public function task(string $topic_id)
+    {
+        $topic_task_completed = UserTaskAnswer::where('topic_id', $topic_id)
+            ->where('user_id', auth()->user()->id)
+            ->exists();
+        if ($topic_task_completed) {
+            dd('show error that topic is completed');
+        }
+        $task = TopicTask::where('topic_id', $topic_id)->first();
+
+        return view(
+            'task.index',
+            [
+                'topic_id' => $topic_id,
+                'task' => $task,
             ]
         );
     }

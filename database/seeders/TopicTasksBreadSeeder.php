@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use VoyagerBread\Traits\BreadSeeder;
 
-class QuestionsBreadSeeder extends Seeder
+class TopicTasksBreadSeeder extends Seeder
 {
     use BreadSeeder;
 
@@ -13,12 +13,12 @@ class QuestionsBreadSeeder extends Seeder
     {
         return [
             // usually the name of the table
-            'name'                  => 'questions',
-            'slug'                  => 'questions',
-            'display_name_singular' => 'Вопрос',
-            'display_name_plural'   => 'Вопросы',
+            'name'                  => 'topic_tasks',
+            'slug'                  => 'topic-tasks',
+            'display_name_singular' => 'Задания',
+            'display_name_plural'   => 'Задания',
             'icon'                  => 'voyager-categories',
-            'model_name'            => 'App\Models\Question',
+            'model_name'            => 'App\Models\TopicTask',
             'controller'            => null,
             'generate_permissions'  => 1,
             'description'           => null,
@@ -48,7 +48,7 @@ class QuestionsBreadSeeder extends Seeder
             ],
             'title' => [
                 'type'         => 'text',
-                'display_name' => 'Текст вопроса',
+                'display_name' => 'Название задания',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -58,24 +58,24 @@ class QuestionsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 2,
             ],
-            'topic_id' => [
-                'type'         => 'number',
-                'display_name' => 'topic_id',
+            'body' => [
+                'type'         => 'rich_text_box',
+                'display_name' => 'Текст задания',
                 'required'     => 1,
-                'browse'       => 0,
-                'read'         => 0,
+                'browse'       => 1,
+                'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 0,
                 'details'      => '',
                 'order'        => 3,
             ],
-            'score' => [
+            'topic_id' => [
                 'type'         => 'number',
-                'display_name' => 'Количество баллов за правильный ответ',
+                'display_name' => 'topic_id',
                 'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
+                'browse'       => 0,
+                'read'         => 0,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 0,
@@ -106,7 +106,7 @@ class QuestionsBreadSeeder extends Seeder
                 'details'      => '',
                 'order'        => 6,
             ],
-            'question_belongsto_topic_relationship' => [
+            'question_with_task_belongsto_topic_relationship' => [
                 'type'         => 'relationship',
                 'display_name' => 'Тема',
                 'required'     => 1,
@@ -134,15 +134,15 @@ class QuestionsBreadSeeder extends Seeder
     {
         return [
             'role'        => 'admin',
-            'title'       => 'Вопросы',
+            'title'       => 'Задания',
             'url'         => '',
-            'route'       => 'voyager.questions.index',
+            'route'       => 'voyager.topic-tasks.index',
             'target'      => '_self',
             'icon_class'  => 'voyager-categories',
             'color'       => null,
             'parent_id'   => null,
             'parameters' => null,
-            'order'       => 6,
+            'order'       => 8,
         ];
     }
 }
