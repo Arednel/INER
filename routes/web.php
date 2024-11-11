@@ -39,7 +39,9 @@ Route::get('/Topic/{id}', [TopicController::class, 'show'])->middleware('auth');
 //Show topic questions
 Route::get('/Topic/{id}/quiz', [TopicController::class, 'quiz'])->middleware('auth');
 //When completing quiz
-Route::post('/Quiz/Complete', [QuizController::class, 'Complete'])->middleware('auth');
+Route::post('/Quiz/Complete', [QuizController::class, 'complete'])->middleware('auth');
+//Show quiz result
+Route::post('/Quiz/Result', [QuizController::class, 'result'])->middleware('auth');
 
 //Show topic task
 Route::get('/Topic/{id}/task', [TopicController::class, 'task'])->middleware('auth');
