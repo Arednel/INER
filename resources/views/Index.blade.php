@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Index</title>
+    <title>Главная</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -25,11 +25,11 @@
 
     <style>
         .background-green {
-            background-color: green;
+            color: green;
         }
 
         .background-red {
-            background-color: red;
+            color: red;
         }
     </style>
 
@@ -59,14 +59,14 @@
                                     <label for="question_{{ $question->id }}_answer_{{ $answer->id }}"
                                         class="quiz-answer-list">
                                         @if ($answer->is_true)
-                                            <div
-                                                class="quiz-answer-text-container-single question-type-single background-green">
-                                                ✓ | {{ $answer->title }}
+                                            <div class="quiz-answer-text-container-single question-type-single">
+                                                <div class="background-green">✓</div>
+                                                &nbsp;| {{ $answer->title }}
                                             </div>
                                         @else
-                                            <div
-                                                class="quiz-answer-text-container-single question-type-single background-red">
-                                                X | {{ $answer->title }}
+                                            <div class="quiz-answer-text-container-single question-type-single">
+                                                <div class="background-red">X</div>
+                                                &nbsp;| {{ $answer->title }}
                                             </div>
                                         @endif
                                     </label>
@@ -76,7 +76,7 @@
                         </div>
                     @endforeach
 
-                    <button type="submit" class="submit_button blue">Перейти к результату</button>
+                    <button type="submit" class="submit_button blue">{!! __('Перейти к результату') !!}</button>
                 </form>
             </div>
         </div>

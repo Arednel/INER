@@ -7,9 +7,9 @@
             <div class="col-md-12 gradient">
                 <div class="templatemo_about">
 
-                    <div class="templatemo_about_title">Добро пожаловать!</div>
+                    <div class="templatemo_about_title">{!! __('Добро пожаловать!') !!}</div>
                     <br>
-                    <div class="templatemo_about_subtitle">Пожалуйста, войдите в свою учетную запись</div>
+                    <div class="templatemo_about_subtitle">{!! __('Пожалуйста, войдите в свою учетную запись') !!}</div>
 
                     <form method="POST" action="/Login" class="form">
 
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-item">
-                            <label class="form-item__title">Пароль</label>
+                            <label class="form-item__title">{!! __('Пароль') !!}</label>
                             <div class="form-item__input">
                                 <input type="password" placeholder="Введите пароль" name="password"
                                     autocomplete="current-password" required>
@@ -45,7 +45,7 @@
                             </div>
                         </div>
 
-                        <button class="blue-btn form-item__btn" type="submit">Войти</button>
+                        <button class="blue-btn form-item__btn" type="submit">{!! __('Войти') !!}</button>
                     </form>
 
                 </div>

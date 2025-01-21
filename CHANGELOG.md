@@ -2,6 +2,12 @@
 
 ## Development
 
+* 2025-01.21 -- 0.6.5 - Kazakh Language
+  * Added and set as default kazakh language
+  * Changed quiz.answers color
+  * Removed Copyright
+  * Other fixes
+
 * 2024-11.11 -- 0.6.4 - Practical tasks
   * Show results after completing test
 

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Topics</title>
+    <title>Task</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -84,9 +84,9 @@
                     <input type="hidden" name="topic_id" value="{{ $topic_id }}">
                     <input type="hidden" name="task_id" value="{{ $task->id }}">
 
-                    <textarea id="body" type="textarea" name="body" placeholder="Введите ваш ответ" rows="8" required></textarea>
+                    <textarea id="body" type="textarea" name="body" placeholder="{!! __('Введите ваш ответ') !!}" rows="8" required></textarea>
                     <br><br>
-                    <button type="submit" class="submit_button blue">Отправить ответ</button>
+                    <button type="submit" class="submit_button blue">{!! __('Отправить ответ') !!}</button>
                 </form>
 
             </div>

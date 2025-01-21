@@ -41,7 +41,7 @@
 
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="name">ФИО</label>
+                                <label for="name">{!! __('ФИО') !!}</label>
                                 <input type="text" class="form-control" id="name" name="name"
                                     placeholder="{{ __('voyager::generic.name') }}"
                                     value="{{ old('name', $dataTypeContent->name ?? '') }}">
@@ -68,9 +68,12 @@
                                 <div class="form-group">
                                     <label for="default_role">{{ __('voyager::profile.role_default') }}</label>
                                     @php
-                                        $dataTypeRows = $dataType->{isset($dataTypeContent->id) ? 'editRows' : 'addRows'};
+                                        $dataTypeRows =
+                                            $dataType->{isset($dataTypeContent->id) ? 'editRows' : 'addRows'};
 
-                                        $row = $dataTypeRows->where('field', 'user_belongsto_role_relationship')->first();
+                                        $row = $dataTypeRows
+                                            ->where('field', 'user_belongsto_role_relationship')
+                                            ->first();
                                         $options = $row->details;
                                     @endphp
                                     @include('voyager::formfields.relationship')
@@ -78,7 +81,9 @@
                                 <div class="form-group">
                                     <label for="additional_roles">{{ __('voyager::profile.roles_additional') }}</label>
                                     @php
-                                        $row = $dataTypeRows->where('field', 'user_belongstomany_role_relationship')->first();
+                                        $row = $dataTypeRows
+                                            ->where('field', 'user_belongstomany_role_relationship')
+                                            ->first();
                                         $options = $row->details;
                                     @endphp
                                     @include('voyager::formfields.relationship')

@@ -59,7 +59,7 @@
                                     onclick="location.href='/Topic/{{ $topic->id }}'">{{ $topic->title }}</button>
                             @else
                                 <button class="subject_button orange"
-                                    onclick="alert('Сначала выполните тему {{ $topic->requiredTopicTitle }} в дисциплине {{ $topic->requiredSubjectTitle }}')">
+                                    onclick="alert('{!! __('Сначала выполните тему') !!} {{ $topic->requiredTopicTitle }} {!! __('в дисциплине') !!} {{ $topic->requiredSubjectTitle }}')">
                                     {{ $topic->title }}</button>
                             @endif
                         @else

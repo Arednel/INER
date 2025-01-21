@@ -65,12 +65,11 @@
                     @if ($topic_completed)
                         <br>
                         <div class="topic-review-div">
-                            Ваш результат за тест: {{ $user_score_to_hundred }} баллов из 100
+                            {!! __('Ваш результат за тест:') !!} {{ $user_score_to_hundred }} {!! __('баллов из 100') !!}
                         </div>
                     @else
                         <button class="subject_button blue"
-                            onclick="location.href='/Topic/{{ $topic->id }}/quiz'">Перейти к
-                            тесту</button>
+                            onclick="location.href='/Topic/{{ $topic->id }}/quiz'">{!! __('Перейти к тесту') !!}</button>
                     @endif
                 @endif
 
@@ -80,18 +79,17 @@
                         @if ($user_task_score != null)
                             <br>
                             <div class="topic-review-div">
-                                Ваш результат за практическое задание: {{ $user_task_score }} баллов из 100
+                                {!! __('Ваш результат за практическое задание:') !!} {{ $user_task_score }} {!! __('баллов из 100') !!}
                             </div>
                         @else
                             <br>
                             <div class="topic-review-div">
-                                Ваш ответ на практическое задание рассматривается
+                                {!! __('Ваш ответ на практическое задание рассматривается') !!}
                             </div>
                         @endif
                     @else
                         <button class="subject_button blue"
-                            onclick="location.href='/Topic/{{ $topic->id }}/task'">Перейти к
-                            заданию</button>
+                            onclick="location.href='/Topic/{{ $topic->id }}/task'">{!! __('Перейти к заданию') !!}</button>
                     @endif
                 @endif
             </div>

@@ -57,7 +57,7 @@
                         </div>
                     @endforeach
 
-                    <button type="submit" class="submit_button blue">Закончить тест</button>
+                    <button type="submit" class="submit_button blue">{!! __('Закончить тест') !!}</button>
                 </form>
             </div>
         </div>
