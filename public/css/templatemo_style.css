@@ -141,16 +141,14 @@ h1 {
 .templatemo_webtitle {
     color: #bed6e6;
     letter-spacing: -2px;
-    line-height: 46px;
     text-shadow: 1px 1px 1px #000000;
-    margin: 25px 0px 0px 30px;
+    margin: 25px 0px 0px 5px;
 }
 
 .templatemo_webtitle span {
     line-height: 30px;
     color: #e0eaf0;
     letter-spacing: -1px;
-    margin-left: 5px;
 }
 
 .templatemo_topwrapper {
@@ -712,7 +710,7 @@ textarea {
     }
 
     .templatemo_webtitle span {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .templemo_hometop_img {

@@ -2,6 +2,12 @@
 
 ## Development
 
+* 2025-02.01 -- 0.6.6 - Index changes
+  * Slogan change
+  * Change image in Index
+  * Change text in Index
+  * Added button "Автор туралы" (Authors information)
+
 * 2025-01.21 -- 0.6.5 - Kazakh Language
   * Added and set as default kazakh language
   * Changed quiz.answers color

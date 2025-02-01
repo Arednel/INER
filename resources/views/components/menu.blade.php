@@ -3,7 +3,8 @@
          <div class="row">
              <div class="templatemo_topwrapper shadow">
                  <div class="col-sm-4">
-                     <div class="templatemo_webtitle">Site<span>SLOGAN IS HERE</span></div>
+                     <div class="templatemo_webtitle"><span>Информатиканы оқытудағы дискретті<br> математикалық
+                             тәсілдер</span></div>
                  </div>
                  <div class="col-sm-8">
                      <nav class="navbar navbar-default" role="navigation">

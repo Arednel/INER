@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.6.5 / 2025.01.xx</p>
-    <p>Kazakh Language</p>
+    <p>version 0.6.6 / 2025.02.01</p>
+    <p>Index changes</p>
 </body>
 
 </html>

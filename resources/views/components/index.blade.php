@@ -4,24 +4,27 @@
             <div class="templatemo_homewrapper shadow">
                 <div class="templatemo_hometop_bg">
                     <div class="col-md-6">
-                        <div class="templemo_hometop_img"><img src="images/templatemo_building.png"
-                                alt="templatemo home image"></div>
+                        <div class="templemo_hometop_img"><img src="images/index_image_1.png" alt="templatemo home image">
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="templatemo_hometop_title">AENEAN SOLICIT</div>
-                        <div class="templatemo_hometop_subtitle">DUIS SEDDIO SIT AMETIONAL</div>
-                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed
-                            non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad
-                            litora torquent per conubia nostra.
-                        </p>
-                        <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed
-                            non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad
-                            litora torquent per conubia nostra.</p>
-                        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum
-                            velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Duis sed odio sit amet
-                            nibh vulputate cursus a sit amet mauris.</p>
-                        <a href="#">
-                            <div class="templatemo_hometop_more blue">READ MORE</div>
+                        <div class="templatemo_hometop_title">КІРІСПЕ</div>
+                        <p>«Информатиканы оқытудағы дискретті математикалық тәсілдер» цифрлық білім беру ресурсы
+                            Информатиканың базалық «Информатиканың математикалық негіздері», «Программалау І»,
+                            «Компьютер архитектурасы және операциялық жүйелер», «Компьютерлік желілер және ақпараттық
+                            қауіпсіздік» пәндерін дискретті математика элементтерін пайдалана отырып негізінен оқытудың
+                            тиімді әдіс-тәсілдерін ұсынады.</p>
+                        <p>Яғни, цифрлық білім беру ресурсы білім алушылардың аталған
+                            пәндер бойынша материалдарды жақсы меңгеруіне, іргелі ұғымдар мен түсініктерді өз бойларында
+                            қалыптастыруға ықпал етеді.</p>
+                        <p>Осыған орай, Цифрлық білім беру ресурсы Информатика пәндерін
+                            дискретті математика элементтерін қолдана оқытуға арналған теориялық материалдар мен
+                            практикалық тапсырмалардан, өз білімін тексеруге арналған тесттерден және кері байланыс
+                            функцияларынан тұрады. Цифрлық ресурс жалпы білім алушыларға, ЖОО оқытушыларына, мектеп
+                            мұғалімдеріне және т.б. тұлғаларға білім алуда септігін тигізер тиімді оқу құралы болып
+                            табылады деген үміттеміз.</p>
+                        <a href="images/index_authors.PNG" data-rel="lightbox">
+                            <div class="templatemo_hometop_more blue">Автор туралы</div>
                         </a>
                     </div>
                     <div class="clear"></div>

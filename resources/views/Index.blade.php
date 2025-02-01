@@ -18,6 +18,8 @@
 
     <script src={{ asset('js/jquery-1.11.1.min.js') }}></script>
     <script src={{ asset('js/bootstrap-collapse.js') }}></script>
+    <script src={{ asset('js/jquery.lightbox.js') }}></script>
+    <script src={{ asset('js/templatemo_custom.js') }}></script> <!-- lightbox -->
 </head>
 
 <body>
