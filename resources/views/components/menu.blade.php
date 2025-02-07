@@ -3,8 +3,7 @@
          <div class="row">
              <div class="templatemo_topwrapper shadow">
                  <div class="col-sm-4">
-                     <div class="templatemo_webtitle"><span>Информатиканы оқытудағы дискретті<br> математикалық
-                             тәсілдер</span></div>
+                     <div class="templatemo_webtitle">ИОДМТ</div>
                  </div>
                  <div class="col-sm-8">
                      <nav class="navbar navbar-default" role="navigation">
@@ -26,20 +25,29 @@
                                              <a class="show-1 templatemo_home" href="/">
                                                  <span class="fa fa-home"></span>{!! __('Главная') !!}</a>
                                          </li>
+
                                          @if (Auth::check())
                                              <li wire:click="changeView('subjects')">
                                                  <a class="show-1 templatemo_page2" href="/Subjects">
                                                      <span class="fa fa-picture-o"></span>{!! __('Дисциплины') !!}</a>
                                              </li>
+                                         @endif
+                                         <li>
+                                             <a href="/images/index_authors.PNG" data-rel="lightbox">
+                                                 <span class="fa fa-users"></span>Автор туралы</a>
+                                         </li>
+                                         @if (Auth::check())
                                              <li>
-                                                 <a href="logout">
-                                                     <span class="fa fa-users"> </span>{!! __('Выйти') !!}
+                                                 <a href="/Logout">
+                                                     <span class="fa fa-right-from-bracket">
+                                                     </span>{!! __('Выйти') !!}
                                                  </a>
                                              </li>
                                          @else
                                              <li wire:click="changeView('login')">
                                                  <a class="show-1 templatemo_page3" href="/Login">
-                                                     <span class="fa fa-users"></span>{!! __('Войти') !!}</a>
+                                                     <span
+                                                         class="fa fa-right-to-bracket"></span>{!! __('Войти') !!}</a>
                                              </li>
                                          @endif
 

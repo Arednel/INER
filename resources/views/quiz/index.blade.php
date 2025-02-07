@@ -10,6 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700,800'
         rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" href={{ asset('css/fontawesome-all.css') }}>
     <link rel="stylesheet" href={{ asset('css/font-awesome.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/templatemo_misc.css') }}>
@@ -20,6 +21,8 @@
     <script src={{ asset('js/jquery-1.11.1.min.js') }}></script>
     <script src={{ asset('js/bootstrap-collapse.js') }}></script>
     <script src={{ asset('js/quiz.js') }}></script>
+    <script src={{ asset('js/jquery.lightbox.js') }}></script>
+    <script src={{ asset('js/templatemo_custom.js') }}></script>
 </head>
 
 <body>

@@ -2,6 +2,12 @@
 
 ## Development
 
+* 2025-02.07 -- 0.6.7 - UI tweaks & fixes
+  * Removed images block from main page
+  * Changed menu Icons
+  * Changed menu WebTitle 
+  * Logout fix
+
 * 2025-02.01 -- 0.6.6 - Index changes
   * Slogan change
   * Change image in Index

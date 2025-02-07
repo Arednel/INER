@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 0.6.6 / 2025.02.01</p>
-    <p>Index changes</p>
+    <p>version 0.6.7 / 2025.02.07</p>
+    <p>UI tweaks & fixes</p>
 </body>
 
 </html>
