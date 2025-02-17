@@ -2,6 +2,11 @@
 
 ## Development
 
+* 2025-02.17 -- 0.6.8 - Index tweaks
+  * Removed social buttons
+  * Change text align
+  * Removed "Автор туралы" button 
+
 * 2025-02.07 -- 0.6.7 - UI tweaks & fixes
   * Removed images block from main page
   * Changed menu Icons
